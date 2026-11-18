@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#6D4FD8">
+<title>Quest Belajar 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --surface:#FFFFFF; --sunk:#F7F5FF;
+  --ink:#221B3A; --ink-mid:#5A5277; --ink-soft:#958FAE;
+  --line:#E7E3F5; --line-soft:#F1EEFA;
+  --bg-a:#F4F1FF; --bg-b:#EDE8FE;
+  --accent:#6D4FD8; --tint:#EEE9FF; --mute:#BBA9F3;
+  --ie:#15926A; --ie-tint:#E4F6EE; --ie-mute:#8FD8BC;
+  --cp:#2F6BE0; --cp-tint:#E6EFFE; --cp-mute:#9DBDF5;
+  --gold:#E0A100; --gold-tint:#FFF5D6; --bad:#D2493C; --bad-tint:#FDECEA;
+  --r:16px;
+  --display:'Poppins',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --util:'JetBrains Mono',ui-monospace,monospace;
+}
+body[data-t="I"]{--accent:var(--ie);--tint:var(--ie-tint);--mute:var(--ie-mute);--sunk:#F4FAF7;--bg-a:#EFFAF4;--bg-b:#E5F4EC;--line:#E1EEE8;--line-soft:#EEF7F3;--ink:#16302A;--ink-mid:#41675C;--ink-soft:#7C9A90;}
+body[data-t="C"]{--accent:var(--cp);--tint:var(--cp-tint);--mute:var(--cp-mute);--sunk:#F5F8FF;--bg-a:#F1F6FF;--bg-b:#E6EEFD;--line:#E2E9F7;--line-soft:#EFF4FC;--ink:#1A2740;--ink-mid:#445573;--ink-soft:#8092B0;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{margin:0;padding:22px 16px calc(96px + env(safe-area-inset-bottom));color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;
+  background:var(--ubg,linear-gradient(165deg,var(--bg-a),var(--bg-b)));background-attachment:fixed;min-height:100vh;-webkit-font-smoothing:antialiased;transition:background .3s;}
+.wrap{max-width:780px;margin:0 auto;}
+button{font-family:inherit;}
+.kicker{font-family:var(--util);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,6.4vw,38px);line-height:1.12;letter-spacing:-.03em;margin:6px 0 4px;}
+h1 em{font-style:normal;color:var(--accent);}
+h2{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.02em;margin:22px 2px 10px;}
+.sub{color:var(--ink-mid);font-size:14px;margin:0;}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;margin:16px 0 6px;}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;}
+.big{font-family:var(--display);font-size:34px;font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--accent);}
+.big small{font-size:14px;font-weight:500;color:var(--ink-mid);letter-spacing:0;margin-left:4px;}
+.k{font-family:var(--util);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);}
+.lvl{display:flex;align-items:center;gap:10px;}
+.lvl-n{width:44px;height:44px;border-radius:14px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:18px;flex:none;}
+.lvl-t{font-family:var(--display);font-weight:600;font-size:14.5px;line-height:1.25;}
+.bar{height:6px;background:var(--line-soft);border-radius:4px;overflow:hidden;margin-top:9px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--mute),var(--accent));border-radius:4px;transition:width .45s;}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.pill{font-family:var(--util);font-size:11px;padding:5px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-mid);}
+.pill b{color:var(--ink);font-weight:500;}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin:10px 0;}
+.card h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;}
+.card h4{font-family:var(--util);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:14px 0 4px;font-weight:500;}
+.note{font-size:13px;color:var(--ink-mid);line-height:1.6;}
+.warn{background:var(--gold-tint);border:1px solid #F3DB8E;border-radius:12px;padding:10px 12px;font-size:13px;color:#6B5200;margin:10px 0;}
+.tag{display:inline-block;font-family:var(--util);font-size:9.5px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--tint);color:var(--accent);margin-right:4px;vertical-align:middle;}
+.tag.ie{background:var(--ie-tint);color:var(--ie);} .tag.cp{background:var(--cp-tint);color:var(--cp);}
+.tag.gold{background:var(--gold-tint);color:#8A6300;} .tag.free{background:#E9F8EF;color:#1D8A4F;} .tag.paid{background:#FFF0E6;color:#B4561B;}
+
+/* checklist items */
+.item{display:flex;gap:11px;align-items:flex-start;padding:9px 0;cursor:pointer;user-select:none;}
+.item + .item{border-top:1px solid var(--line-soft);}
+.tick{flex:none;width:20px;height:20px;margin-top:2px;border-radius:7px;border:1.6px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;transition:.15s;}
+.tick svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;opacity:0;}
+.item.done .tick{background:var(--accent);border-color:var(--accent);}
+.item.done .tick svg{opacity:1;}
+.item.done .it{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--mute);}
+.it{font-size:14.5px;line-height:1.55;}
+.xp{flex:none;margin-left:auto;font-family:var(--util);font-size:10px;color:var(--ink-soft);padding-top:3px;}
+.item.done .xp{color:var(--accent);}
+.ie-i .item.done .tick,.item.ie-i.done .tick{background:var(--ie);border-color:var(--ie);}
+.cp-i .item.done .tick,.item.cp-i.done .tick{background:var(--cp);border-color:var(--cp);}
+
+/* habits */
+.habits{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.hab{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:13px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-size:13.5px;line-height:1.35;user-select:none;transition:.15s;}
+.hab .em{font-size:18px;flex:none;}
+.hab.on{border-color:var(--accent);background:var(--tint);}
+.hab.ie.on{border-color:var(--ie);background:var(--ie-tint);} .hab.cp.on{border-color:var(--cp);background:var(--cp-tint);}
+.hab.fun.on{border-color:var(--gold);background:var(--gold-tint);}
+.heat{display:grid;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;gap:3px;margin-top:10px;overflow-x:auto;}
+.heat i{width:13px;height:13px;border-radius:3px;background:var(--line-soft);display:block;}
+.heat i.l1{background:var(--mute);} .heat i.l2{background:var(--accent);opacity:.7;} .heat i.l3{background:var(--accent);}
+.heat i.today{outline:1.5px solid var(--ink);outline-offset:1px;}
+
+/* challenge */
+.chal{background:linear-gradient(135deg,var(--gold-tint),#FFFBEF);border:1px solid #F3DB8E;}
+.chal .txt{font-family:var(--display);font-size:16px;font-weight:600;line-height:1.4;margin:6px 0 12px;}
+
+/* buttons */
+.btn{font-family:var(--display);font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-mid);cursor:pointer;transition:.15s;}
+.btn:hover{border-color:var(--mute);color:var(--accent);}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff;}
+.btn.sm{font-size:11px;padding:5px 11px;}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.seg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;width:fit-content;max-width:100%;margin:6px 0 4px;}
+.seg button{border:none;background:none;padding:8px 18px;border-radius:999px;font-family:var(--display);font-size:13px;font-weight:500;color:var(--ink-soft);cursor:pointer;}
+.seg button.on{background:var(--accent);color:#fff;}
+
+/* phase strip */
+.strip{display:flex;gap:6px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none;}
+.strip::-webkit-scrollbar{display:none;}
+.ph{flex:none;min-width:128px;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:10px 12px;}
+.ph.now{border-color:var(--accent);box-shadow:0 3px 14px -6px var(--mute);}
+.ph b{font-family:var(--display);font-size:13px;display:block;line-height:1.3;}
+.ph span{font-family:var(--util);font-size:9.5px;color:var(--ink-soft);display:block;margin-top:3px;}
+
+/* month card */
+.mon{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin:9px 0;overflow:hidden;}
+.mon.now{border-color:var(--accent);box-shadow:0 4px 20px -10px var(--mute);}
+.mon-h{display:flex;gap:12px;align-items:center;padding:13px 15px;cursor:pointer;width:100%;background:none;border:none;text-align:left;color:inherit;}
+.ring{flex:none;width:46px;height:46px;position:relative;}
+.ring svg{width:46px;height:46px;transform:rotate(-90deg);}
+.ring span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:11px;font-weight:600;color:var(--accent);}
+.mon-id{flex:1;min-width:0;}
+.mon-m{font-family:var(--util);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+.mon-t{font-family:var(--display);font-size:15.5px;font-weight:600;line-height:1.28;letter-spacing:-.015em;display:block;margin-top:1px;}
+.now-badge{font-family:var(--util);font-size:9px;background:var(--accent);color:#fff;border-radius:999px;padding:2px 7px;margin-left:6px;letter-spacing:.06em;vertical-align:2px;}
+.caret{flex:none;width:9px;height:9px;border-right:1.6px solid var(--ink-soft);border-bottom:1.6px solid var(--ink-soft);transform:rotate(45deg);transition:.2s;margin-right:4px;}
+.mon.open .caret{transform:rotate(-135deg);}
+.mon-b{display:none;padding:0 16px 16px;}
+.mon.open .mon-b{display:block;animation:rv .25s ease;}
+@keyframes rv{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px;}
+.wk{border-left:2.5px solid var(--line);padding:2px 0 2px 12px;margin:10px 0;}
+.wk.cur{border-left-color:var(--accent);}
+.wk-h{font-family:var(--util);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+.wk.cur .wk-h{color:var(--accent);}
+.boss{background:linear-gradient(135deg,var(--tint),var(--surface));border:1.5px dashed var(--mute);border-radius:14px;padding:12px 14px;margin:14px 0 8px;}
+.boss-h{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;}
+.boss-t{font-family:var(--display);font-weight:600;font-size:14.5px;}
+.boss-d{font-family:var(--util);font-size:10.5px;color:var(--accent);}
+.gate{background:var(--sunk);border-radius:14px;padding:12px 14px;margin:10px 0;}
+.gate-t{font-family:var(--display);font-weight:600;font-size:14px;}
+.plat{font-size:12.5px;color:var(--ink-mid);margin-top:10px;}
+.plat b{font-family:var(--util);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-right:6px;}
+.rw{display:flex;gap:8px;align-items:center;margin-top:8px;}
+.rw input{flex:1;min-width:0;}
+input,select,textarea{font-family:var(--body);font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--tint);}
+
+/* tes */
+.form{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:10px 0;}
+.form label{display:flex;flex-direction:column;gap:4px;font-family:var(--util);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);}
+.form label.wide{grid-column:1/-1;}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:6px;}
+.tbl table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px;}
+.tbl th{font-family:var(--util);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);text-align:left;padding:7px 8px;border-bottom:1.5px solid var(--mute);font-weight:500;white-space:nowrap;}
+.tbl td{padding:8px;border-bottom:1px solid var(--line-soft);vertical-align:top;}
+.ok{color:#1D8A4F;font-weight:600;} .no{color:var(--bad);font-weight:600;}
+.chart svg{width:100%;height:auto;display:block;margin-top:10px;}
+
+/* badges */
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;}
+.bd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center;filter:grayscale(1);opacity:.45;}
+.bd.on{filter:none;opacity:1;border-color:var(--gold);background:var(--gold-tint);}
+.bd .e{font-size:26px;line-height:1;}
+.bd b{display:block;font-family:var(--display);font-size:12px;margin-top:6px;line-height:1.25;}
+.bd span{display:block;font-size:10.5px;color:var(--ink-soft);margin-top:2px;line-height:1.3;}
+.list{margin:0;padding-left:19px;font-size:14px;} .list li{margin:5px 0;}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  display:flex;justify-content:center;padding:6px 6px calc(6px + env(safe-area-inset-bottom));}
+.nav-in{display:flex;max-width:520px;width:100%;justify-content:space-around;}
+.nav button{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 8px;border-radius:12px;color:var(--ink-soft);font-size:10.5px;font-family:var(--display);font-weight:500;cursor:pointer;min-width:58px;}
+.nav button .e{font-size:19px;line-height:1.2;filter:grayscale(.7);}
+.nav button.on{color:var(--accent);background:var(--tint);}
+.nav button.on .e{filter:none;}
+.pane{display:none;} .pane.on{display:block;animation:rv .25s ease;}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-family:var(--display);font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.colo{font-family:var(--util);font-size:10px;color:var(--ink-soft);text-align:center;margin-top:28px;line-height:1.8;}
+
+/* tema warna latar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.icb{flex:none;width:44px;height:44px;border-radius:14px;border:none;background:rgba(255,255,255,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;box-shadow:0 2px 10px -6px rgba(0,0,0,.25);}
+.icb:hover{background:rgba(255,255,255,.8);transform:translateY(-1px);}
+.sh-bg{position:fixed;inset:0;z-index:40;background:rgba(30,25,50,.28);display:flex;align-items:flex-end;justify-content:center;}
+.sh-bg[hidden]{display:none;}
+.sheet{background:var(--surface);width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom));max-height:86vh;overflow-y:auto;animation:up .25s ease;}
+@keyframes up{from{transform:translateY(30px);opacity:0;}to{transform:none;opacity:1;}}
+.sheet h3{font-family:var(--display);font-size:17px;margin:0 0 2px;}
+.sheet h4{font-family:var(--util);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:16px 0 8px;font-weight:500;}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px;margin-top:12px;}
+.sw{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:6px 6px 8px;cursor:pointer;text-align:center;font-family:var(--display);font-size:11.5px;font-weight:500;color:var(--ink-mid);transition:.15s;}
+.sw i{display:block;height:46px;border-radius:10px;margin-bottom:6px;border:1px solid rgba(0,0,0,.05);}
+.sw.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--tint);color:var(--ink);}
+.cu{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;}
+.cu label{display:flex;flex-direction:column;gap:4px;font-family:var(--util);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);}
+.cu input[type=color]{width:56px;height:40px;padding:3px;border-radius:10px;cursor:pointer;}
+.cu-prev{flex:1;min-width:90px;height:40px;border-radius:10px;border:1px solid var(--line);}
+.chkl{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-mid);margin-top:10px;cursor:pointer;}
+.chkl input{width:auto;}
+@media(max-width:560px){.hero{grid-template-columns:1fr;}.form{grid-template-columns:repeat(2,1fr);}.card{padding:15px;}.habits{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body data-t="H">
+<div class="wrap">
+
+<header>
+  <div class="top"><div class="kicker" id="kick">2 Nov 2026 → Des 2027</div><button class="icb" id="thOpen" title="Ganti warna latar" aria-label="Ganti warna latar">🎨</button></div>
+  <h1 id="ttl">Quest <em>CPNS 2026</em> &amp; <em>IELTS 7.0</em></h1>
+  <p class="sub" id="subt">Dua misi, satu buku harian. Centang, kumpulkan XP, kalahkan “Boss” tiap akhir bulan.</p>
+  <div class="hero">
+    <div class="box">
+      <div class="k">Level kamu</div>
+      <div class="lvl" style="margin-top:6px"><div class="lvl-n" id="lvN">1</div><div><div class="lvl-t" id="lvT">Pemula</div><div class="k" id="lvX">0 XP</div></div></div>
+      <div class="bar"><i id="lvB" style="width:0%"></i></div>
+    </div>
+    <div class="box">
+      <div class="k" id="cdK">Menuju tes IELTS ±11 Des 2027</div>
+      <div class="big" id="cd">–<small>hari</small></div>
+      <div class="k" id="cd2" style="margin-top:6px"></div>
+    </div>
+  </div>
+  <div class="pills" id="pills"></div>
+</header>
+
+<!-- ============ HARI INI ============ -->
+<section class="pane on" id="p-H">
+  <div id="preStart"></div>
+  <h2 id="todayH">Hari ini</h2>
+  <div class="card">
+    <h3>Kebiasaan harian <span class="note" style="font-weight:400">· +5 XP per kotak</span></h3>
+    <div class="habits" id="habits"></div>
+    <p class="note" style="margin:10px 0 0">Hari berat? Cukup 1 kotak supaya streak tetap nyala. Aturannya: jangan bolong 2 hari berturut-turut.</p>
+    <div class="heat" id="heat"></div>
+    <div class="k" style="margin-top:6px">12 minggu terakhir · makin gelap = makin banyak kotak tercentang</div>
+  </div>
+
+  <div class="card chal">
+    <div class="k" style="color:#8A6300">Tantangan hari ini · +15 XP</div>
+    <div class="txt" id="chalT"></div>
+    <div class="row"><button class="btn pri" id="chalDone">Selesai!</button><button class="btn" id="chalNew">Acak lagi 🎲</button></div>
+  </div>
+
+  <h2>Quest minggu ini</h2>
+  <div id="weekQ"></div>
+
+  <h2>Boss bulan ini</h2>
+  <div id="bossQ"></div>
+</section>
+
+<!-- ============ IELTS ============ -->
+<section class="pane" id="p-I">
+  <h2>Jalur IELTS · A2 → C1</h2>
+  <div id="focusI"></div>
+  <p class="note" style="margin:0 2px">Target minimal Band 7.0 (opsi 7.5+). Tiap bulan: 4 quest mingguan (grammar + vocab), tugas rutin 4 skill, dan Boss tes akhir bulan. Di akhir fase ada gerbang <b>“Siap naik?”</b>.</p>
+  <div class="strip" id="stripI" style="margin-top:12px"></div>
+  <div id="listI"></div>
+  <div class="row" style="margin-top:12px"><button class="btn" data-all="I1">Buka semua</button><button class="btn" data-all="I0">Tutup semua</button></div>
+</section>
+
+<!-- ============ CPNS ============ -->
+<section class="pane" id="p-C">
+  <h2>Jalur CPNS 2026 · SKD → SKB</h2>
+  <div class="warn" id="cpWarn"></div>
+  <div class="card" id="skdCard"></div>
+  <div class="card" id="fmCard"></div>
+  <div class="strip" id="stripC"></div>
+  <div id="listC"></div>
+  <div class="row" style="margin-top:12px"><button class="btn" data-all="C1">Buka semua</button><button class="btn" data-all="C0">Tutup semua</button></div>
+</section>
+
+<!-- ============ TES ============ -->
+<section class="pane" id="p-T">
+  <h2>Tes & try-out</h2>
+  <p class="note" style="margin:0 2px" id="tesIntro"></p>
+  <div class="seg" id="tesSeg"><button data-tes="C">CPNS</button><button data-tes="I">IELTS</button></div>
+  <div class="card">
+    <h3 id="tesH">Catat hasil</h3>
+    <div class="form" id="tesForm"></div>
+    <div class="row"><button class="btn pri" id="tesSave">Simpan (+50 XP)</button><span class="note" id="tesMsg"></span></div>
+    <div class="chart" id="tesChart"></div>
+  </div>
+  <div class="card">
+    <h3 id="tesTblH">Jadwal & riwayat</h3>
+    <div class="tbl" id="tesTbl"></div>
+  </div>
+  <div class="card" id="tesGuide"></div>
+</section>
+
+<!-- ============ LAINNYA ============ -->
+<section class="pane" id="p-L">
+  <div class="seg" id="moreSeg"><button data-more="plat" class="on">Platform</button><button data-more="fun">Biar Fun</button><button data-more="badge">Lencana</button><button data-more="set">Data</button></div>
+  <div id="more-plat"></div>
+  <div id="more-fun" hidden></div>
+  <div id="more-badge" hidden></div>
+  <div id="more-set" hidden></div>
+</section>
+
+<p class="colo">v9 · Semua data tersimpan di browser perangkat ini (localStorage) · rajin-rajin backup di tab Lainnya → Data</p>
+</div>
+
+<nav class="nav"><div class="nav-in">
+  <button data-nav="H" class="on"><span class="e">🏠</span>Hari Ini</button>
+  <button data-nav="C"><span class="e">🏛️</span>CPNS</button>
+  <button data-nav="I"><span class="e">🇬🇧</span>IELTS</button>
+  <button data-nav="T"><span class="e">⚔️</span>Tes</button>
+  <button data-nav="L"><span class="e">✨</span>Lainnya</button>
+</div></nav>
+<div class="sh-bg" id="thBg" hidden><div class="sheet" role="dialog" aria-label="Warna latar">
+  <div class="row" style="justify-content:space-between"><h3>🎨 Warna latar</h3><button class="btn sm" id="thClose">Tutup</button></div>
+  <p class="note" style="margin:0">Semua pilihan sengaja dibuat pucat & lembut supaya mata tidak cepat lelah. Warna tombol & aksen tetap mengikuti tab (ungu/hijau/biru).</p>
+  <div class="sw-grid" id="swGrid"></div>
+  <h4>Bikin sendiri</h4>
+  <div class="cu"><label>Warna 1<input type="color" id="cuA" value="#E3EAF8"></label><label>Warna 2<input type="color" id="cuB" value="#F3E1EC"></label><div class="cu-prev" id="cuPrev"></div><button class="btn pri" id="cuApply">Pakai</button></div>
+  <label class="chkl"><input type="checkbox" id="cuSoft" checked> Lembutkan otomatis (warna terang/mencolok dibuat pastel)</label>
+  <p class="note" style="margin:8px 0 0">Mau warna polos? Pilih Warna 1 dan Warna 2 yang sama.</p>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== DATA: IELTS ===================== */
+const I_PHASES=[
+ {id:'F1',n:'Foundation',c:'A2 → B1',p:'Nov 26 – Feb 27',tg:'5.0'},
+ {id:'F2',n:'Intermediate',c:'B1 → B2',p:'Mar – Jun 27',tg:'6.0'},
+ {id:'F3',n:'Upper-Int',c:'B2 → C1',p:'Jul – Sep 27',tg:'6.5–7.0'},
+ {id:'F4',n:'Exam Mode',c:'C1',p:'Okt – Nov 27',tg:'7.0+'},
+ {id:'TES',n:'Hari-H',c:'—',p:'Des 27',tg:'≥ 7.0'}];
+const I_MONTHS=[
+{ym:'2026-11',ph:'F1',t:'Diagnostic & tenses dasar',lv:'A2',h:7,tg:null,
+ w:[["EF SET 50 menit (efset.org) — catat skor CEFR sebagai baseline","1 Listening + 1 Reading IELTS resmi gratis — catat skor /40 di tab Tes (bulan Nov)","Tulis 1 esai Task 2 dalam 40 menit → cek levelnya di Write & Improve","Rekam Speaking #1: 4 pertanyaan Part 1 + 1 cue card. Simpan selamanya!","Setup: deck Anki 'IELTS', Google Sheets error log, blokir jam belajar di kalender"],
+    ["Grammar: present simple vs present continuous (+ stative verbs)","Vocab: rutinitas & pekerjaan — 25 kata ke Anki, pakai kalimat contoh"],
+    ["Grammar: past simple + 50 irregular verbs tersering","Vocab: keluarga & hubungan (25 kata)"],
+    ["Grammar: past continuous + used to","Vocab: hobi & waktu luang (25 kata)"]],
+ r:["6 Minute English 3×/minggu — sekali tanpa, sekali dengan transkrip","Jurnal 5 kalimat/hari pakai grammar minggu itu","1 graded reader Stage 2 (Oxford Bookworms / Penguin Readers)","Rekam 1 menit/hari menjawab 1 pertanyaan Part 1"],
+ boss:"Mini-test: Listening Section 1–2 + 1 passage Reading (20') + rekaman Part 2",
+ pl:"EF SET · Write & Improve · BBC 6 Minute English · Anki"},
+{ym:'2026-12',ph:'F1',t:'Future, perfect & perbandingan',lv:'A2+',h:7,tg:4.0,
+ w:[["Grammar: future (will, going to, present continuous untuk rencana)","Vocab: travel & transport"],
+    ["Grammar: present perfect (for/since, ever/never, already/yet) vs past simple","Vocab: pendidikan"],
+    ["Grammar: comparative & superlative, as…as","Vocab: kota & tempat tinggal"],
+    ["Minggu santai akhir tahun: review grammar Nov–Des + bereskan Anki","Fun: 1 film liburan dengan subtitle Inggris, catat 5 frasa"]],
+ r:["IELTS Listening Section 1 2×/minggu — fokus ejaan nama, angka, tanggal","1 artikel News in Levels tiap 2 hari","Paragraf 80 kata (topic sentence → 2 alasan → contoh) 2×/minggu","Speaking Part 1: pola Jawab + Alasan + Contoh untuk 6 topik"],
+ boss:"Mini-test: Listening Section 1–2 + 1 passage Reading + Part 2",
+ pl:"British Council LearnEnglish · News in Levels · ieltsliz.com"},
+{ym:'2027-01',ph:'F1',t:'Kalimat kompleks',lv:'B1−',h:8,tg:4.5,
+ w:[["Grammar: modal (can, could, must, have to, should)","Vocab: kesehatan & olahraga"],
+    ["Grammar: linking words (because, although, so, however)","Vocab: teknologi"],
+    ["Grammar: relative clauses (who, which, that, where)","Vocab: lingkungan & cuaca"],
+    ["Grammar: zero & first conditional","Vocab: uang & belanja"]],
+ r:["Listening Section 1–2 (map, multiple choice) 2×/minggu","Reading passage 1: latihan skimming & scanning","Writing Task 1 pertama: bar chart ±100 kata","Speaking Part 2: 1 cue card/minggu (1 menit siap, bicara 1–1,5 menit)"],
+ boss:"Diagnostic: Listening 4 section + 1 passage timed + Task 1 + Part 2",
+ pl:"English Grammar in Use (biru) · Cambridge IELTS 10–11"},
+{ym:'2027-02',ph:'F1',t:'Konsolidasi B1 + Mock #1',lv:'B1',h:8,tg:5.0,
+ w:[["Grammar: passive voice (present & past)","Vocab: karier & dunia kerja"],
+    ["Grammar: gerund vs infinitive (enjoy doing, want to do)","Vocab: media & komunikasi"],
+    ["Grammar: preposisi waktu, tempat & setelah kata sifat","Vocab: sifat & kepribadian"],
+    ["Self-test grammar Fase 1 (40 soal)","Coba familiarisation test resmi format yang mau kamu ambil"]],
+ r:["1 Listening Section 1–3/minggu","Reading 1 passage 20 menit, 2×/minggu","Task 2 pertama: opinion essay 250 kata","Speaking Part 1 + 2 berurutan, rekam, bandingkan dengan Rekaman #1"],
+ boss:"FULL MOCK #1 (Cambridge IELTS 14) + ulang EF SET",
+ gate:{t:"Siap naik ke Fase 2?",i:["Mock #1 Listening ≥ 16/40 (band 5.0)","Mock #1 Reading ≥ 15/40 (band 5.0)","Task 2 250 kata dalam 40 menit tanpa menerjemahkan dari Bahasa Indonesia","Speaking Part 2 bicara 1,5 menit tanpa berhenti lama","EF SET ≥ 41 (B1)"]},
+ pl:"Cambridge IELTS 14 · Write & Improve · EF SET"},
+{ym:'2027-03',ph:'F2',t:'Academic Word List & T/F/NG',lv:'B1+',h:9,tg:5.0,
+ w:[["Grammar: second conditional + wish","Vocab: AWL sublist 1 (bagian 1)"],
+    ["Grammar: present perfect continuous","Vocab: AWL sublist 1 (bagian 2)"],
+    ["Grammar: past perfect untuk narasi","Vocab: AWL sublist 1 (bagian 3) + topik masyarakat"],
+    ["Review + bereskan error log","Vocab: AWL sublist 1 tuntas"]],
+ r:["Listening Section 3 (diskusi akademik) 2 set/minggu","Reading True/False/Not Given & Yes/No/Not Given — 2 passage/minggu","Task 1 line graph — overview wajib, 150 kata/20 menit","Task 2 opinion essay 1×/minggu","Speaking Part 3: pendapat → alasan → contoh"],
+ boss:"Diagnostic: full Listening + full Reading 60' + Task 2 + Speaking Part 2–3",
+ pl:"Academic Word List (Coxhead) · ieltsliz.com · E2 IELTS (YouTube)"},
+{ym:'2027-04',ph:'F2',t:'Cohesion & deskripsi data + Mock #2',lv:'B1+',h:9,tg:5.5,
+ w:[["Grammar: passive lanjutan (it is said that…, have something done)","Vocab: AWL 2 + lingkungan"],
+    ["Grammar: reported speech","Vocab: AWL 2 + media & iklan"],
+    ["Grammar: non-defining & reduced relative clauses","Vocab: AWL 2 + kesehatan"],
+    ["Grammar: linking akademik (whereas, consequently, in contrast)","Vocab: AWL 2 + pemerintahan"]],
+ r:["Listening Section 4 — prediksi jenis kata sebelum audio diputar","Reading matching headings + sentence completion","Task 1 pie chart & table — bahasa perbandingan","Task 2 discussion essay (both views + opinion)","Speaking Part 2: 2 cue card/minggu, isi penuh 2 menit"],
+ boss:"FULL MOCK #2 (Cambridge IELTS 15)",
+ pl:"Cambridge IELTS 15 · ielts-simon.com · Luke's English Podcast"},
+{ym:'2027-05',ph:'F2',t:'Paraphrasing & tipe esai',lv:'B2−',h:10,tg:5.5,
+ w:[["Grammar: third & mixed conditional","Vocab: AWL 3 + teknologi"],
+    ["Grammar: nominalisation (increase → an increase in)","Vocab: AWL 3 + urbanisasi"],
+    ["Grammar: modals of deduction (must have, might have)","Vocab: AWL 3 + budaya & tradisi"],
+    ["Review + error log","Vocab: AWL 3 tuntas"]],
+ r:["1 full Listening timed/minggu","1 full Reading 60 menit/minggu","Task 1 process diagram (pakai passive) & map","Task 2 advantages/disadvantages & problem/solution","Speaking Part 3: dulu vs sekarang, prediksi masa depan"],
+ boss:"Diagnostic full 4 skill + ulang EF SET",
+ pl:"Grammar for IELTS (Cambridge) · IELTS Advantage (YouTube)"},
+{ym:'2027-06',ph:'F2',t:'Konsolidasi B2 + Mock #3',lv:'B2',h:10,tg:6.0,
+ w:[["Grammar: articles & subject-verb agreement di tulisan akademik","Vocab: AWL 4 + globalisasi"],
+    ["Grammar: hedging (tend to, it could be argued that)","Vocab: AWL 4 + sains & riset"],
+    ["Self-test grammar Fase 2 (40 soal)","Vocab: AWL 4 tuntas"],
+    ["Coba 1 sesi tutor (italki/Preply) untuk Writing & Speaking","Analisis mendalam Mock #3"]],
+ r:["1 full Listening + 1 full Reading/minggu + analisis kesalahan","Task 1 + Task 2 berurutan dalam 60 menit, 1×/minggu","Simulasi Speaking Part 1–3 lengkap 1×/minggu"],
+ boss:"FULL MOCK #3 (Cambridge IELTS 16) — titik kritis target",
+ gate:{t:"Siap naik ke Fase 3?",i:["Mock #3 Listening ≥ 23/40 (6.0)","Mock #3 Reading ≥ 23/40 (6.0)","Writing ±6.0: Task 1 selalu ada overview, Task 2 posisi jelas","Speaking ±6.0, Part 2 penuh 2 menit","EF SET ≥ 51 (B2)"],note:"Kalau Mock #3 overall masih ≤ 5.5: ambil 2–3 minggu buffer, lalu pilih target 6.5 di Desember atau geser tes ke Feb–Mar 2028 untuk 7.0."},
+ pl:"Cambridge IELTS 16 · italki / Preply"},
+{ym:'2027-07',ph:'F3',t:'Kalimat kompleks C1 + Mock #4',lv:'B2+',h:11,tg:6.0,
+ w:[["Participle clauses (Having finished…, Built in 1900…)","Collocation: pendidikan & kerja"],
+    ["Emphasis & inversion ringan (Not only…, What matters is…)","Collocation: lingkungan"],
+    ["Conditional variasi (unless, provided that, should you…)","Collocation: ekonomi"],
+    ["Tulis ulang 2 esai lama dengan struktur baru","Update topic bank vocab"]],
+ r:["Listening: latihan distractor (jawaban yang dikoreksi pembicara) Section 3–4","Reading: disiplin 20 menit/passage","Task 2: 1 ide utama per paragraf + contoh spesifik","Feedback tutor Writing/Speaking 2×/bulan"],
+ boss:"FULL MOCK #4 (Cambridge IELTS 17)",
+ pl:"Advanced Grammar in Use · English Collocations in Use · Ozdic"},
+{ym:'2027-08',ph:'F3',t:'Lexical resource C1 + daftar tes',lv:'B2+',h:11,tg:6.5,
+ w:[["DAFTAR TES IELTS untuk ±11 Des 2027 — pilih Academic/General, paper/computer, IDP/British Council, kota & slot","Word families & collocation (economy → economic/economical)"],
+    ["Paraphrasing drill 10 kalimat/hari","Topik: kesehatan & gaya hidup"],
+    ["Cleft sentences & fronting","Topik: pemerintahan & kebijakan"],
+    ["Topic bank Writing: 10 topik tersering × 10 collocation","Review"]],
+ r:["1 full Listening + 1 TED talk dengan catatan/minggu","1 full Reading + artikel The Conversation 3×/minggu","Task 1: 2 grafik gabungan — pilih fitur utama","Speaking Part 3: pertanyaan abstrak (why, what if)"],
+ boss:"FULL MOCK #5 (Cambridge IELTS 17) + ulang EF SET",
+ pl:"The Conversation · TED · ielts.idp.com / takeielts.britishcouncil.org"},
+{ym:'2027-09',ph:'F3',t:'Akurasi & feedback + Mock #6',lv:'C1−',h:12,tg:6.5,
+ w:[["Error log: drill 5 kesalahan grammar tersering (15 kalimat/kesalahan)"],
+    ["Tanda baca & batas kalimat: comma splice, run-on, fragment"],
+    ["Pronunciation: word stress, sentence stress, chunking, intonasi"],
+    ["Tulis ulang esai yang sudah diberi feedback","Self-check: masih ada kesalahan berulang?"]],
+ r:["2 esai/minggu dengan feedback → tulis versi perbaikan","1 mock Speaking dengan tutor/partner per minggu","1–2 full test Listening & Reading/minggu"],
+ boss:"FULL MOCK #6 (Cambridge IELTS 18)",
+ gate:{t:"Siap naik ke Fase 4?",i:["Mock #6 Listening ≥ 30/40 (7.0)","Mock #6 Reading ≥ 27/40 (6.5), idealnya ≥ 30","Writing 6.5 di kedua task (dicek tutor/band descriptors)","Speaking 6.5–7.0","Tes IELTS resmi sudah terdaftar & terbayar"]},
+ pl:"English with Lucy · Rachel's English · tutor IELTS"},
+{ym:'2027-10',ph:'F4',t:'Teknik ujian & stamina',lv:'C1',h:12,tg:7.0,
+ w:[["Reading: checklist strategi semua tipe soal + urutan pengerjaan versimu"],
+    ["Listening: latihan persis format ujianmu (paper: transfer 10'; computer: review 2'), ejaan & plural","FULL MOCK #7 (Sabtu minggu ke-2)"],
+    ["Writing: rencana 5' + Task 1 20' + Task 2 40' berturut-turut"],
+    ["Speaking: simulasi penuh 2×/minggu, nilai pakai 4 kriteria"]],
+ r:["50% waktu latihan untuk skill terlemah","Konfirmasi jadwal Speaking & lokasi tes dari email resmi"],
+ boss:"FULL MOCK #8 kondisi ujian penuh (Cambridge IELTS 19)",
+ pl:"The Official Cambridge Guide to IELTS · familiarisation test resmi"},
+{ym:'2027-11',ph:'F4',t:'Simulasi penuh mingguan',lv:'C1',h:12,tg:7.0,
+ w:[["FULL MOCK #9 — di jam yang sama dengan jadwal tesmu"],["FULL MOCK #10"],["FULL MOCK #11"],["Analisis tiap mock ≤ 48 jam, update improvement plan"]],
+ r:["Jadikan 3 esai terbaikmu 'model pribadi' — dibaca ulang, bukan dihafal","Dengarkan Rekaman Speaking #1 vs sekarang — rasakan progresnya","Opsional jalur 7.5+: 1 long read The Economist/The Guardian per hari"],
+ boss:"FULL MOCK #12 (seri terbaru) + EF SET",
+ gate:{t:"Siap tes?",i:["2 mock terakhir berturut-turut overall ≥ 7.0","Tidak ada skill < 6.5","EF SET ≥ 61 (C1)"]},
+ pl:"Cambridge IELTS seri terbaru · free practice test resmi"},
+{ym:'2027-12',ph:'TES',t:'Taper & hari-H',lv:'—',h:6,tg:7.0,
+ w:[["Kurangi intensitas 30–50%: 1 Listening + 1 Reading ringan/hari, tanpa mock penuh","Cek dokumen identitas sama persis dengan saat daftar & masih berlaku","Cek lokasi & rute, rencanakan tiba 30 menit lebih awal"],
+    ["HARI-H: tes IELTS (±11 Des)","Tulis kesan tiap bagian selagi masih ingat"],
+    ["Istirahat & rayakan — kamu konsisten 13 bulan!"],
+    ["Hasil keluar → catat band di tab Tes","Kalau kurang dari target: cek opsi One Skill Retake di pusat tesmu"]],
+ r:[], boss:"TES RESMI IELTS — band akhir dicatat di tab Tes", bossDate:'2027-12-11',
+ pl:"IDP Indonesia (ielts.idp.com) · British Council (takeielts.britishcouncil.org)"}
+];
+const IELTS_MAINT=["Anki deck IELTS 15 menit/hari — jaga streak, tahan dulu kartu baru","1 audio pendek (6 Minute English / podcast) di perjalanan pulang","Opsional akhir pekan: rekam 1 menit jawaban Speaking Part 1"];
+
+/* ===================== DATA: CPNS 2026 (roadmap ngebut) ===================== */
+const C_PHASES=[
+ {id:'K1',n:'Kejar PG',c:'TKP · TIU · TWK',p:'9–30 Nov 26',tg:'≥ 311 & lolos PG'},
+ {id:'K2',n:'Daftar + Ngebut',c:'subtes terlemah',p:'Des 26',tg:'380+ ×2'},
+ {id:'K3',n:'Puncak SKD',c:'simulasi CAT',p:'Jan – Feb 27',tg:'400+'},
+ {id:'K4',n:'SKB',c:'kisi-kisi jabatan',p:'Feb – Mar 27',tg:'SKB maksimal'},
+ {id:'K5',n:'Lanjutan',c:'hasil / cadangan',p:'Apr – Des 27',tg:'—'}];
+const C_MONTHS=[
+{ym:'2026-11',ph:'K1',t:'Kejar passing grade',h:10,tg:311,
+ w:[["Persiapan (2–8 Nov): aktifkan Mode Fokus CPNS & baca rencana CPNS 2026","Cek NIK & No. KK sudah padan (aplikasi IKD / Dukcapil)"],
+    ["TKP: pola jawaban bernilai 5 (proaktif, solutif, patuh aturan, utamakan publik)","TIU: deret angka + silogisme (semua/sebagian/tidak dapat disimpulkan)","TWK: Pancasila — BPUPKI/PPKI & nilai tiap sila","Scan KTP, KK, ijazah, transkrip, pas foto latar merah","TRY-OUT #1 (Sabtu 14 Nov) — baseline jujur, catat di tab Tes"],
+    ["TIU: persen, perbandingan senilai/berbalik nilai, soal cerita","TWK: UUD 1945 + integritas & anti-korupsi (2–3 modul aclc.kpk.go.id)","TKP: pelayanan publik & profesionalisme","Pantau sscasn.bkn.go.id tiap pagi","TRY-OUT #2 (Sabtu 21 Nov)"],
+    ["TIU: analitis (pakai tabel bantu) + figural (rotasi, refleksi, serial)","TWK: nasionalisme, bela negara, EYD V & kalimat efektif","TKP: sosial budaya, TIK, anti-radikalisme","Formasi rilis → isi Shortlist Formasi (3–5 pilihan)","TRY-OUT #3 (Sabtu 28 Nov)"]],
+ r:["Hari kerja: Anki CPNS 10' + 15 soal TKP di perjalanan pagi","Malam: 1 materi baru 25' + 20 soal berwaktu 25' + error log 10'","Minggu: drill subtes terlemah dari try-out Sabtu (60–90')"],
+ boss:"Try-out #3 — lolos PG ketiga subtes (TWK 65 · TIU 80 · TKP 166)",
+ gate:{t:"Gerbang 1: siap fase ngebut?",i:["TWK ≥ 65","TIU ≥ 80","TKP ≥ 166","Dokumen administrasi lengkap & ter-scan"],note:"Belum lolos? Minggu berikutnya 70% waktu ke subtes yang gagal, lalu try-out ulang. Jangan menambah materi baru dulu."},
+ pl:"Simulasi CAT BKN · 1 aplikasi try-out · buku kisi-kisi SKD · aclc.kpk.go.id"},
+{ym:'2026-12',ph:'K2',t:'Pendaftaran + ngebut skor',h:11,tg:380,
+ w:[["Buat akun SSCASN, simpan Kartu Informasi Akun","Pilih 1 formasi (★ di Shortlist) & unggah berkas — target hari ke-7–10 pendaftaran","60% waktu ke subtes terlemah; ulang semua soal salah","TRY-OUT #4"],
+    ["Speed drill: TIU 35 soal / 30 menit","Speed drill: TKP 45 soal / 25 menit","TRY-OUT #5 di Simulasi CAT BKN — target 350+"],
+    ["TWK HOTS: analisis teks & pasal kontekstual","Figural lanjutan","Cek hasil seleksi administrasi / masa sanggah","TRY-OUT #6"],
+    ["Libur akhir tahun: 2 try-out penuh (#7 & #7b)","Unduh kisi-kisi SKB formasi pilihan","Ulang 50 soal paling sering salah"]],
+ r:["35–50 soal/hari di hari kerja","Error log tiap hari","Minggu UAS S2 / kerja padat → versi minimum: Anki 10' + 20 soal + try-out Sabtu tetap"],
+ boss:"Try-out akhir Desember — 380+",
+ gate:{t:"Gerbang 2: siap puncak?",i:["Total ≥ 380 di dua try-out berturut-turut","Tidak ada subtes yang selisih < 10 poin dari PG","Berkas lolos seleksi administrasi"],note:"Belum 380+? Tambah 1 try-out tengah minggu dan fokus kecepatan, bukan materi baru."},
+ pl:"Simulasi CAT BKN · aplikasi try-out · sscasn.bkn.go.id"},
+{ym:'2027-01',ph:'K3',t:'Puncak SKD',h:10,tg:400,
+ w:[["TRY-OUT #8 + analisis ≤ 48 jam","Ringkasan 1 halaman per subtes (versi final)","Mulai materi SKB 3×/minggu","Cek jadwal & lokasi SKD, isi tanggalnya di tab CPNS"],
+    ["Taper: 20 soal/hari, tanpa materi baru H-1","Cetak kartu peserta, siapkan KTP asli","Atur pola tidur sesuai jam sesi mulai H-3","SKD (perkiraan paling cepat) — kalau jadwal mundur, lanjut try-out mingguan"],
+    ["Jika SKD belum: 1 try-out/minggu + drill subtes terlemah","Pantau live score formasi yang sama"],
+    ["SKB: bank soal substansi jabatan 20 soal/hari","Latihan wawancara: 5 cerita STAR dari pekerjaan sekarang"]],
+ r:["Jaga ritme 20–35 soal/hari","Tidur & olahraga cukup"],
+ boss:"SKD resmi / try-out akhir bulan — 400+",
+ gate:{t:"Siap SKD?",i:["Total ≥ 400 di try-out terakhir","TKP ≥ 185 · TIU ≥ 110 · TWK ≥ 100","Urutan pengerjaan & aturan 60 detik sudah terkunci"],note:"Angka 400+ adalah target aman untuk formasi kompetitif (mis. DKI), bukan aturan resmi."},
+ pl:"Simulasi CAT BKN · kisi-kisi SKB instansi"},
+{ym:'2027-02',ph:'K4',t:'SKD / SKB',h:9,tg:400,
+ w:[["Ikuti SKD bila jadwal jatuh di bulan ini","Catat skor SKD resmi di tab Tes (sumber: SKD resmi)"],
+    ["Pengumuman hasil SKD → cek peringkat di formasi"],
+    ["SKB: drill kisi-kisi jabatan 30 soal/hari","Simulasi wawancara, rekam & evaluasi"],
+    ["Siapkan dokumen SKB tambahan bila diminta instansi"]],
+ r:["SKB 1 jam/hari","Ingat: nilai akhir = 40% SKD + 60% SKB (aturan 2024)"],
+ boss:"SKD resmi / try-out SKB",
+ pl:"Kisi-kisi SKB instansi · instansi pembina jabatan"},
+{ym:'2027-03',ph:'K4',t:'SKB & kelulusan',h:6,tg:null,
+ w:[["SKB CAT + tes tambahan (wawancara/psikotes/praktik) sesuai instansi"],
+    ["Pantau integrasi nilai SKD & SKB"],
+    ["Pengumuman kelulusan akhir (perkiraan Mar–Apr)"],
+    ["Lulus → pemberkasan NIP. Belum → evaluasi & siapkan seleksi berikutnya","Matikan Mode Fokus CPNS → kembali ke jadwal IELTS penuh"]],
+ r:[], boss:"Hasil akhir seleksi CPNS 2026",
+ pl:"sscasn.bkn.go.id · situs instansi"}
+];
+['2027-04','2027-05','2027-06','2027-07','2027-08','2027-09','2027-10','2027-11','2027-12'].forEach(ym=>C_MONTHS.push({
+ ym,ph:'K5',t:ym==='2027-12'?'Evaluasi setahun':'Pasca-seleksi / cadangan',h:2,tg:null,
+ w:[["Lulus: ikuti pemberkasan & orientasi CPNS"],["Belum lulus: pantau CPNS 2027 di sscasn.bkn.go.id"],["Maintenance 15 soal SKD/hari bila menunggu seleksi berikutnya"],["Evaluasi bulanan"]],
+ r:[], boss:"Try-out maintenance (opsional)", pl:"sscasn.bkn.go.id"}));
+const C_PREP=[
+ {t:"Dokumen administrasi",i:["NIK & No. KK padan di Dukcapil (aplikasi IKD)","Scan KTP-el asli (warna, jelas, tidak terpotong)","Scan Kartu Keluarga","Scan ijazah & transkrip asli — nama dan tanggal lahir sama persis dengan KTP","Cek akreditasi prodi & kampus saat lulus (PDDikti / BAN-PT)","Pas foto terbaru latar merah sesuai ketentuan ukuran file","Swafoto dengan KTP + Kartu Informasi Akun SSCASN","Surat lamaran & pernyataan — pakai format resmi instansi 2026","Siapkan jalur SKCK & surat sehat bila diminta","Semua file dalam 1 folder, nama baku (KTP_NamaLengkap.pdf)"]},
+ {t:"Teknis ujian CAT",i:["Kunci urutan pengerjaan setelah 3 try-out (contoh: TKP → TWK → TIU)","Aturan 60 detik: soal macet ditandai, kembali di akhir","5 menit terakhir: isi semua soal yang masih kosong","2 try-out di jam yang sama dengan sesi SKD","H-3 atur tidur; H-1 tanpa materi baru","Hari-H: KTP asli + kartu peserta, datang sesuai jam hadir (2024: 90 menit sebelum ujian)","Setelah ujian: catat skor & pantau live score formasi yang sama"]},
+ {t:"Memilih formasi (saat SSCASN dibuka)",i:["Hari 1–2: unduh pengumuman DKI, Tangsel & instansi pusat incaran","Saring jabatan yang mencantumkan jurusan S1 persis seperti di ijazah","Isi Shortlist Formasi (3–5 pilihan) di bawah","Tandai 1 formasi final (★) — sistem hanya mengizinkan 1 formasi","Submit hari ke-5–10, cetak bukti pendaftaran"]}
+];
+const SKD_DEFAULT=new Date(2027,0,11);
+
+/* ===================== DATA: HABITS, CHALLENGES, PLATFORMS ===================== */
+const HABITS=[
+ {id:'anki',t:'Anki 15 menit',e:'🃏',c:'ie'},
+ {id:'inp',t:'1 listening/reading',e:'🎧',c:'ie'},
+ {id:'out',t:'Ngomong/nulis 5 menit',e:'🎙️',c:'ie'},
+ {id:'soal',t:'Soal CPNS harian',e:'📝',c:'cp'},
+ {id:'err',t:'Review error log',e:'🔍',c:'cp'},
+ {id:'fun',t:'Fun English (series/podcast)',e:'🍿',c:'fun'}];
+const HABITS_FOCUS=[
+ {id:'ankic',t:'Anki CPNS 10 menit',e:'🃏',c:'cp'},
+ {id:'soal',t:'Soal CPNS 35–50',e:'📝',c:'cp'},
+ {id:'mat',t:'Materi baru 25 menit',e:'📚',c:'cp'},
+ {id:'err',t:'Review error log',e:'🔍',c:'cp'},
+ {id:'ielm',t:'IELTS maintenance 15 menit',e:'🎧',c:'ie'},
+ {id:'fun',t:'Fun English (opsional)',e:'🍿',c:'fun'}];
+function habits(){return S.focus?HABITS_FOCUS:HABITS;}
+const CHALLENGES=[
+ "Ganti bahasa HP ke English seharian",
+ "Ceritakan harimu 1 menit ke kamera — dalam English",
+ "Tulis 5 kalimat pakai 3 kata Anki terbaru",
+ "Tonton 1 video TED-Ed, lalu jelaskan ulang isinya dalam 3 kalimat",
+ "Cari 3 collocation untuk kata 'environment' di Ozdic",
+ "10 soal TIU numerik tanpa kalkulator, pakai timer 8 menit",
+ "Jelaskan 1 pasal UUD 1945 ke diri sendiri seolah mengajar",
+ "Shadowing 2 menit dari podcast favorit",
+ "Think in English: narasikan dalam hati semua yang kamu lakukan saat masak/mandi",
+ "Kuis kilat 10 soal TWK sejarah",
+ "Tulis caption story dalam English (tidak harus diposting)",
+ "Baca 1 berita BBC & ringkas dalam 3 kalimat",
+ "Speed round: 15 soal TKP dalam 8 menit",
+ "Jelaskan 1 grafik dari berita dalam 100 kata (mini Task 1)",
+ "Rekam diri menjawab 'Describe a place you like' selama 2 menit",
+ "Ulangi 5 soal tersalah dari error log",
+ "Bikin mind map vocab 1 topik IELTS (mis. technology)",
+ "Ajarkan 1 trik TIU ke teman atau keluarga",
+ "Dengarkan 1 lagu Inggris & cari 3 frasa baru (tulis di Anki pakai kalimatmu sendiri)",
+ "Main 1 ronde Wordle atau game kata English",
+ "Kirim 1 voice note ke teman dalam English",
+ "Baca 1 halaman ringkasan TWK sambil jalan/menunggu",
+ "Tulis 3 kalimat opini tentang berita hari ini (mini Task 2)",
+ "Ucapkan 10 kata yang sering salah ucap, cek pakai kamus Oxford (audio)"
+];
+const CHALLENGES_C=[
+ "15 soal deret angka dalam 10 menit",
+ "Tulis 5 ciri jawaban TKP bernilai 5 dari ingatan, lalu cek",
+ "Speed round: 15 soal TKP dalam 8 menit",
+ "10 soal silogisme — tulis alasan untuk tiap jawaban 'tidak dapat disimpulkan'",
+ "Kuis kilat 10 soal TWK pilar negara",
+ "Ulangi 5 soal tersalah dari error log",
+ "10 soal TIU numerik tanpa kalkulator, timer 8 menit",
+ "Jelaskan 1 pasal UUD 1945 ke diri sendiri seolah mengajar",
+ "5 soal analitis pakai tabel bantu, catat waktunya",
+ "Masukkan 5 pasal/tanggal penting ke Anki CPNS",
+ "Baca 1 modul aclc.kpk.go.id (integritas) 15 menit",
+ "10 soal figural: tulis polanya dalam 1 kata (rotasi/refleksi/jumlah)",
+ "Cari 5 kata tidak baku di chat hari ini, cek di KBBI daring",
+ "Cek SSCASN & catat 1 hal baru di Shortlist Formasi",
+ "Shadowing 2 menit dari podcast English favorit"
+];
+const PLAT={
+ I:[
+  {g:"Inti (gratis)",x:[
+   ["BBC Learning English","free","6 Minute English & 6 Minute Grammar — input harian Fase 1–2"],
+   ["British Council LearnEnglish","free","Grammar & latihan per level A1–C1"],
+   ["Write & Improve (Cambridge)","free","Upload tulisan → dapat estimasi level CEFR & koreksi otomatis"],
+   ["EF SET","free","Tes 50 menit Reading + Listening dengan skor CEFR — ulang tiap 3 bulan"],
+   ["Anki","free","Flashcard spaced repetition (Android gratis) — kunci vocab 13 bulan"],
+   ["Free practice test resmi","free","ielts.org · ielts.idp.com · takeielts.britishcouncil.org — termasuk familiarisation test computer-delivered"]]},
+  {g:"Strategi IELTS (gratis)",x:[
+   ["ieltsliz.com","free","Penjelasan tiap tipe soal & Speaking Part 1–3, cocok Fase 1–2"],
+   ["ielts-simon.com","free","Contoh esai Task 1 & 2 yang ringkas dan rapi"],
+   ["YouTube: E2 IELTS, IELTS Advantage, Keith O'Hare","free","Teknik Writing & Speaking Fase 2–4"],
+   ["Ozdic + Oxford Learner's Dictionaries","free","Collocation & pengucapan"]]},
+  {g:"Layak dibayar",x:[
+   ["Cambridge IELTS 14–19 (buku)","paid","Bahan mock paling mirip ujian asli. Simpan seri terbaru untuk November"],
+   ["Tutor di italki / Preply / Cambly","paid","Feedback Writing & Speaking mulai Jun 2027 — paling sulit dinilai sendiri"],
+   ["English Grammar in Use / Advanced Grammar in Use","paid","Satu buku grammar sesuai level sudah cukup"],
+   ["ELSA Speak","paid","Latihan pronunciation dengan feedback suara (opsional, Fase 3)"]]},
+  {g:"Pendukung fun",x:[
+   ["Podcast: Luke's English Podcast, All Ears English","free","Teman perjalanan"],
+   ["Series/film + subtitle Inggris","free","English Fun Day — pilih yang kamu memang suka"],
+   ["Duolingo","free","Boleh buat pemanasan/streak, tapi jangan jadi menu utama — kurang cocok untuk target IELTS"]]}
+ ],
+ C:[
+  {g:"Resmi (gratis, wajib)",x:[
+   ["sscasn.bkn.go.id","free","Satu-satunya portal pendaftaran & pengumuman resmi — cek tiap pagi"],
+   ["Simulasi CAT BKN (cat.bkn.go.id/simulasi)","free","Tampilan paling mirip ujian asli — minimal 2× (Des & awal Jan)"],
+   ["menpan.go.id, bkn.go.id, @kemenpanrb, @bkngoid","free","Pengumuman nasional & jadwal SKD; abaikan info tanpa sumber resmi"],
+   ["bkd.jakarta.go.id & BKPSDM Tangsel","free","Pengumuman formasi daerah incaran"],
+   ["aclc.kpk.go.id","free","E-learning antikorupsi — pas untuk TWK integritas"],
+   ["KBBI daring & EYD V","free","Bahasa Indonesia untuk TWK"]]},
+  {g:"Try-out & bank soal (pilih 1 saja)",x:[
+   ["1 aplikasi try-out SKD","paid","Contoh di Play Store: MisiPNS, Analitica. Syarat: pembahasan per soal, timer per subtes, peringkat nasional, bank soal cukup untuk 8–10 try-out. Coba versi gratis 3 hari dulu"],
+   ["1 buku kisi-kisi + bank soal SKD edisi terbaru","paid","Konsep TWK & rumus TIU di minggu 1–3"],
+   ["YouTube pembahasan SKD (mis. @ayocpns)","free","Cara berpikir TKP & trik deret/silogisme — untuk perjalanan"]]},
+  {g:"Pendukung",x:[
+   ["Anki (deck CPNS)","free","Pasal UUD, tokoh & tanggal, kata baku — 10 menit/hari"],
+   ["Google Sheets error log","free","Satu file dengan IELTS, tab berbeda"]]}
+ ]
+};
+const BADGES=[
+ {id:'first',e:'🌱',t:'Langkah Pertama',d:'Centang quest pertama'},
+ {id:'s7',e:'🔥',t:'Seminggu Nyala',d:'Streak 7 hari'},
+ {id:'s30',e:'🌋',t:'Sebulan Nyala',d:'Streak 30 hari'},
+ {id:'s100',e:'💯',t:'Seratus Hari',d:'Streak 100 hari'},
+ {id:'boss',e:'⚔️',t:'Boss Pertama',d:'Catat tes/try-out pertama'},
+ {id:'b5',e:'🥉',t:'Band 5',d:'Overall IELTS ≥ 5.0'},
+ {id:'b6',e:'🥈',t:'Band 6',d:'Overall IELTS ≥ 6.0'},
+ {id:'b7',e:'🥇',t:'Band 7',d:'Overall IELTS ≥ 7.0'},
+ {id:'pg',e:'🎯',t:'Tembus PG',d:'Lolos passing grade ketiga subtes'},
+ {id:'c380',e:'🚀',t:'Skor 380+',d:'Total SKD ≥ 380'},
+ {id:'c400',e:'🏛️',t:'Skor 400+',d:'Total SKD ≥ 400'},
+ {id:'to10',e:'🧱',t:'10 Try-out',d:'Catat 10 try-out SKD'},
+ {id:'month',e:'🗓️',t:'Bulan Sempurna',d:'Semua quest 1 bulan tuntas'},
+ {id:'xp1k',e:'⭐',t:'1.000 XP',d:'Kumpulkan 1.000 XP'},
+ {id:'ch10',e:'🎲',t:'Penantang',d:'10 tantangan harian'}];
+const LEVELS=[[0,'Pemula'],[150,'Pelajar Rajin'],[400,'Penjelajah'],[800,'Pejuang'],[1300,'Ksatria Kata'],[2000,'Ahli Strategi'],[3000,'Juara Bertahan'],[4300,'Master'],[6000,'Grandmaster'],[8000,'Legenda']];
+const PG={twk:65,tiu:80,tkp:166};
+const MO=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+const MOF=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+
+/* ===================== STORAGE ===================== */
+const LS='questBelajar2027_v1';
+function defaults(){return {chk:{},hab:{},logI:{},logC:{},to:[],fm:[],fmPick:'',focus:true,rw:{},skd:'',ch:{},chOff:{},theme:'auto',cust:null};}
+let S=defaults();
+let storageOK=true;
+function load(){
+  try{ localStorage.setItem('__t','1'); localStorage.removeItem('__t'); }catch(e){ storageOK=false; return; }
+  try{ const r=localStorage.getItem(LS); if(r){ const o=JSON.parse(r); for(const k in S) if(o[k]!==undefined) S[k]=o[k]; } }catch(e){}
+  if(!Array.isArray(S.to))S.to=[]; if(!Array.isArray(S.fm))S.fm=[];
+}
+let svT=null;
+function save(){ clearTimeout(svT); svT=setTimeout(()=>{ try{ localStorage.setItem(LS,JSON.stringify(S)); }catch(e){} },200); }
+
+/* ===================== HELPERS ===================== */
+const $=id=>document.getElementById(id);
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+const p2=n=>String(n).padStart(2,'0');
+function dkey(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());}
+function ymOf(d){return d.getFullYear()+'-'+p2(d.getMonth()+1);}
+function ymLabel(ym,full){const [y,m]=ym.split('-').map(Number);return (full?MOF:MO)[m-1]+' '+y;}
+function lastSat(ym){const [y,m]=ym.split('-').map(Number);const d=new Date(y,m,0);while(d.getDay()!==6)d.setDate(d.getDate()-1);return d;}
+function fmtD(d){return d.getDate()+' '+MO[d.getMonth()]+' '+d.getFullYear();}
+function pd(s){const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);}
+function bossDate(T,m){ if(m.bossDate) return pd(m.bossDate); return lastSat(m.ym); }
+function skdDate(){return S.skd?pd(S.skd):SKD_DEFAULT;}
+const START=new Date(2026,10,2), TEST=new Date(2027,11,11);
+const TODAY=new Date(); TODAY.setHours(0,0,0,0);
+function curYM(){ if(TODAY<START) return '2026-11'; const y=ymOf(TODAY); return y>'2027-12'?'2027-12':y; }
+function curWeek(){ if(TODAY<START) return 0; const d=TODAY.getDate(); const off=(ymOf(TODAY)==='2026-11')?2:1; return Math.max(0,Math.min(3,Math.floor((d-off)/7))); }
+const CHECK='<svg viewBox="0 0 12 12"><polyline points="1.5,6.5 4.5,9.5 10.5,2.5"/></svg>';
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),1600);}
+function MONTHS(T){return T==='I'?I_MONTHS:C_MONTHS;}
+
+/* item ids */
+function monthItems(T,m){
+  const out=[];
+  m.w.forEach((wk,wi)=>wk.forEach((t,ii)=>out.push({id:`${T}|${m.ym}|w${wi}|${ii}`,t})));
+  m.r.forEach((t,ii)=>out.push({id:`${T}|${m.ym}|r|${ii}`,t}));
+  out.push({id:`${T}|${m.ym}|b`,t:m.boss});
+  if(m.gate) m.gate.i.forEach((t,ii)=>out.push({id:`${T}|${m.ym}|g|${ii}`,t}));
+  return out;
+}
+function monthStat(T,m){const it=monthItems(T,m);const d=it.filter(x=>S.chk[x.id]).length;return {d,n:it.length,p:it.length?d/it.length:0};}
+
+/* ===================== SCORES ===================== */
+const L_TABLE=[[39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],[23,6],[18,5.5],[16,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5],[0,0]];
+const R_TABLE=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5],[0,0]];
+function toBand(raw,tbl){if(raw==null||raw===''||isNaN(raw))return null;for(const [m,b] of tbl)if(raw>=m)return b;return 0;}
+function overall(l,r,w,s){if([l,r,w,s].some(v=>v==null||isNaN(v)))return null;const a=(l+r+w+s)/4,f=Math.floor(a),d=a-f;return d<.25?f:(d<.75?f+.5:f+1);}
+function fb(b){return b==null?'–':(Number.isInteger(b)?b+'.0':String(b));}
+function iRes(e){if(!e)return null;const lb=toBand(e.l,L_TABLE),rb=toBand(e.r,R_TABLE);return {lb,rb,ov:overall(lb,rb,e.w,e.s)};}
+function cRes(e){if(!e)return null;const ok=[e.twk,e.tiu,e.tkp].every(v=>v!=null);const tot=ok?e.twk+e.tiu+e.tkp:null;const pg=ok&&e.twk>=PG.twk&&e.tiu>=PG.tiu&&e.tkp>=PG.tkp;return {tot,pg};}
+/* semua try-out CPNS: log baru per tanggal + log lama per bulan (v8) */
+function allTO(){
+  const legacy=Object.keys(S.logC).map(ym=>Object.assign({},S.logC[ym],{id:'L'+ym,d:dkey(lastSat(ym)),src:'Boss bulanan (v8)'}));
+  return S.to.concat(legacy);
+}
+function metTarget(T,m){
+  if(T==='I'){const r=iRes(S.logI[m.ym]);if(!r||r.ov==null)return null;return m.tg==null?true:r.ov>=m.tg;}
+  const tos=allTO().filter(x=>x.d.slice(0,7)===m.ym).sort((a,b)=>a.d.localeCompare(b.d));
+  if(!tos.length)return null;
+  const r=cRes(tos[tos.length-1]);if(!r||r.tot==null)return null;if(m.tg==null)return true;return r.tot>=m.tg&&(m.tg<311||r.pg);
+}
+
+/* ===================== XP / STREAK ===================== */
+function habDays(){return Object.keys(S.hab).filter(k=>S.hab[k]&&S.hab[k].length).sort();}
+function streak(){
+  let n=0;const d=new Date(TODAY);
+  if(!(S.hab[dkey(d)]||[]).length) d.setDate(d.getDate()-1);
+  while((S.hab[dkey(d)]||[]).length){n++;d.setDate(d.getDate()-1);}
+  return n;
+}
+function bestStreak(){
+  const days=habDays();let best=0,cur=0,prev=null;
+  days.forEach(k=>{const d=new Date(k+'T00:00:00');if(prev&&Math.round((d-prev)/86400000)===1)cur++;else cur=1;best=Math.max(best,cur);prev=d;});
+  return best;
+}
+function totalXP(){
+  let x=Object.keys(S.chk).length*10;
+  Object.values(S.hab).forEach(a=>x+=(a||[]).length*5);
+  x+=Object.keys(S.logI).length*50+Object.keys(S.logC).length*50+S.to.length*40;
+  x+=Object.values(S.ch).filter(Boolean).length*15;
+  return x;
+}
+function level(x){let i=0;LEVELS.forEach((l,j)=>{if(x>=l[0])i=j;});const cur=LEVELS[i][0],nx=LEVELS[i+1]?LEVELS[i+1][0]:null;return {n:i+1,t:LEVELS[i][1],p:nx?(x-cur)/(nx-cur):1,nx};}
+
+/* ===================== RENDER: HEADER ===================== */
+let lastLv=null;
+function renderHeader(){
+  const x=totalXP(),L=level(x);
+  $('lvN').textContent=L.n;$('lvT').textContent=L.t;
+  $('lvX').textContent=x+' XP'+(L.nx?' · '+(L.nx-x)+' lagi ke level '+(L.n+1):' · level maksimal');
+  $('lvB').style.width=Math.round(L.p*100)+'%';
+  if(lastLv!==null&&L.n>lastLv) toast('🎉 Naik level! Sekarang: '+L.t);
+  lastLv=L.n;
+  const days=Math.max(0,Math.ceil((TEST-TODAY)/86400000));
+  if(S.focus){
+    const sd=skdDate(),n=Math.max(0,Math.ceil((sd-TODAY)/86400000));
+    $('kick').textContent='Mode Fokus CPNS · '+fmtD(TODAY);
+    $('subt').textContent='Fokus CPNS 2026 dulu: kejar passing grade, daftar formasi, puncak di SKD. IELTS jalan versi maintenance 15 menit/hari.';
+    $('cdK').textContent=S.skd?'Menuju SKD CPNS':'Menuju SKD CPNS (perkiraan)';
+    $('cd').innerHTML=n+'<small>hari</small>';
+    $('cd2').textContent=fmtD(sd)+' · tes IELTS ±11 Des 2027: '+days+' hari';
+  }else{
+    $('kick').textContent='2 Nov 2026 → Des 2027';
+    $('subt').textContent='Dua misi, satu buku harian. Centang, kumpulkan XP, kalahkan “Boss” tiap akhir bulan.';
+    $('cdK').textContent='Menuju tes IELTS ±11 Des 2027';
+    $('cd').innerHTML=days+'<small>hari</small>';
+    $('cd2').textContent='±'+Math.ceil(days/7)+' minggu · '+(TODAY<START?'mulai Senin, 2 Nov 2026':'bulan ke-'+(monthIndex()+1)+' dari 14');
+  }
+  const ym=curYM(),mi=I_MONTHS.find(m=>m.ym===ym),mc=C_MONTHS.find(m=>m.ym===ym);
+  const ih=S.focus?1.5:mi.h;
+  $('pills').innerHTML=`<span class="pill">🔥 Streak <b>${streak()}</b> hari</span>
+   <span class="pill">⏱️ Target minggu ini <b>±${String(ih+mc.h).replace('.',',')} jam</b> (CPNS ${mc.h} · IELTS ${String(ih).replace('.',',')})</span>
+   <span class="pill">🧪 Try-out <b>${allTO().length}</b></span>
+   <span class="pill">🏅 <b>${earnedBadges().length}/${BADGES.length}</b> lencana</span>`;
+}
+function monthIndex(){return Math.max(0,I_MONTHS.findIndex(m=>m.ym===curYM()));}
+
+/* ===================== RENDER: HOME ===================== */
+function itemHTML(id,t,cls){const on=!!S.chk[id];return `<div class="item ${cls||''}${on?' done':''}" data-chk="${esc(id)}"><div class="tick">${CHECK}</div><div class="it">${esc(t)}</div><div class="xp">+10</div></div>`;}
+function renderHome(){
+  $('preStart').innerHTML = TODAY<START ? `<div class="warn">Rencana resmi mulai <b>Senin, 2 November 2026</b>. Kebiasaan harian sudah bisa dicentang dari sekarang.</div>`:'';
+  const tk=dkey(TODAY);
+  $('todayH').textContent='Hari ini · '+['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'][TODAY.getDay()]+', '+fmtD(TODAY);
+  const on=S.hab[tk]||[];
+  $('habits').innerHTML=habits().map(h=>`<div class="hab ${h.c}${on.includes(h.id)?' on':''}" data-hab="${h.id}"><span class="em">${h.e}</span><span>${esc(h.t)}</span></div>`).join('');
+  // heatmap 12 weeks, columns start Monday
+  const end=new Date(TODAY);const start=new Date(TODAY);start.setDate(start.getDate()-83);
+  while(start.getDay()!==1)start.setDate(start.getDate()-1);
+  let cells='';const d=new Date(start);
+  while(d<=end){const n=(S.hab[dkey(d)]||[]).length;const l=n===0?'':n<=2?'l1':n<=4?'l2':'l3';cells+=`<i class="${l}${dkey(d)===tk?' today':''}" title="${dkey(d)}: ${n}"></i>`;d.setDate(d.getDate()+1);}
+  $('heat').innerHTML=cells;
+  // challenge
+  const pool=S.focus?CHALLENGES_C:CHALLENGES;
+  const ci=(hashDay(tk)+(S.chOff[tk]||0))%pool.length;
+  $('chalT').textContent=pool[ci];
+  $('chalDone').textContent=S.ch[tk]?'✓ Sudah selesai':'Selesai!';
+  $('chalDone').disabled=!!S.ch[tk];
+  // week quests
+  const ym=curYM(),w=curWeek();
+  const mi=I_MONTHS.find(m=>m.ym===ym),mc=C_MONTHS.find(m=>m.ym===ym);
+  const blk=(T,m,cls,lab)=>{
+    const wk=m.w[w]||[];
+    return `<div class="card ${cls}"><h3><span class="tag ${T==='I'?'ie':'cp'}">${lab}</span> Minggu ${w+1} · ${esc(m.t)}</h3>
+      ${wk.map((t,ii)=>itemHTML(`${T}|${m.ym}|w${w}|${ii}`,t,cls)).join('')}
+      <h4>Rutin bulan ini</h4>${m.r.length?m.r.map((t,ii)=>itemHTML(`${T}|${m.ym}|r|${ii}`,t,cls)).join(''):'<p class="note">—</p>'}
+      <div class="row" style="margin-top:8px"><button class="btn sm" data-go="${T}">Lihat rencana lengkap →</button></div></div>`;
+  };
+  const maint=`<div class="card ie-i"><h3><span class="tag ie">IELTS</span> Maintenance · Mode Fokus CPNS</h3>
+      ${IELTS_MAINT.map((t,ii)=>itemHTML(`IM|${ym}|w${w}|${ii}`,t,'ie-i')).join('')}
+      <p class="note" style="margin:8px 0 0">Quest IELTS bulanan tetap bisa dibuka di tab IELTS, tapi tidak wajib selama fokus CPNS.</p></div>`;
+  $('weekQ').innerHTML=S.focus?blk('C',mc,'cp-i','CPNS')+maint:blk('I',mi,'ie-i','IELTS')+blk('C',mc,'cp-i','CPNS');
+  const bossBlk=(T,m,lab)=>{const bd=bossDate(T,m);const dd=Math.ceil((bd-TODAY)/86400000);const met=metTarget(T,m);
+    const tgt=T==='I'?(m.tg==null?'baseline':'overall ≥ '+fb(m.tg)):(m.tg==null?'catat hasil':'total ≥ '+m.tg+(m.tg>=311?' & lolos PG':''));
+    const st=met===null?(dd>=0?`${dd} hari lagi`:'belum dicatat'):(met?'<span class="ok">✓ Boss kalah!</span>':'<span class="no">Belum tembus — pakai buffer 1 minggu</span>');
+    const rw=S.rw[T+m.ym];
+    return `<div class="boss"><div class="boss-h"><span class="boss-t"><span class="tag ${T==='I'?'ie':'cp'}">${lab}</span>${esc(m.boss)}</span><span class="boss-d">${fmtD(bd)}</span></div>
+      <div class="note" style="margin-top:4px">Target: <b>${tgt}</b> · ${st}</div>
+      ${rw?`<div class="note" style="margin-top:4px">🎁 Hadiah: ${esc(rw)}${met?' — <b>silakan klaim!</b>':''}</div>`:''}</div>`;};
+  $('bossQ').innerHTML=(S.focus?bossBlk('C',mc,'CPNS')+'<p class="note" style="margin:0 2px">Boss IELTS ditunda selama Mode Fokus CPNS.</p>':bossBlk('I',mi,'IELTS')+bossBlk('C',mc,'CPNS'))+`<div class="row" style="margin-top:8px"><button class="btn sm" data-nav="T">Catat skor di tab Tes →</button></div>`;
+}
+function hashDay(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h;}
+
+/* ===================== RENDER: TRACK ===================== */
+const OPEN=new Set();
+function ringSVG(p){const r=19,c=2*Math.PI*r;return `<svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="${r}" fill="none" stroke="var(--line-soft)" stroke-width="4"/><circle cx="23" cy="23" r="${r}" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p)}"/></svg>`;}
+function renderTrack(T){
+  const months=MONTHS(T),phases=T==='I'?I_PHASES:C_PHASES,ym=curYM(),w=curWeek(),cls=T==='I'?'ie-i':'cp-i';
+  const curPh=months.find(m=>m.ym===ym).ph;
+  $('strip'+T).innerHTML=phases.map(p=>`<div class="ph${p.id===curPh?' now':''}"><b>${esc(p.id)} · ${esc(p.n)}</b><span>${esc(p.p)}</span><span>${esc(p.c)} · target ${esc(p.tg)}</span></div>`).join('');
+  $('list'+T).innerHTML=months.map(m=>{
+    const st=monthStat(T,m),isNow=m.ym===ym,key=T+m.ym,open=OPEN.has(key);
+    const bd=bossDate(T,m),met=metTarget(T,m);
+    const tgt=T==='I'?(m.tg==null?'Baseline':'Target '+fb(m.tg)):(m.tg==null?'Tanpa target skor':'Target '+m.tg);
+    return `<article class="mon${isNow?' now':''}${open?' open':''}" data-key="${key}">
+      <button class="mon-h" data-tog="${key}">
+        <span class="ring">${ringSVG(st.p)}<span>${Math.round(st.p*100)}%</span></span>
+        <span class="mon-id"><span class="mon-m">${ymLabel(m.ym,true)} · ${esc(m.ph)}${m.lv?' · '+esc(m.lv):''}${isNow?'<span class="now-badge">SEKARANG</span>':''}</span>
+        <span class="mon-t">${esc(m.t)}</span></span>
+        <span class="caret"></span></button>
+      <div class="mon-b ${cls}">
+        <div class="meta"><span class="tag">${m.h} jam/minggu</span><span class="tag">${tgt}</span><span class="tag">${st.d}/${st.n} quest</span>${met===true?'<span class="tag gold">Boss kalah ✓</span>':''}</div>
+        ${m.w.map((wk,wi)=>`<div class="wk${isNow&&wi===w?' cur':''}"><div class="wk-h">Minggu ${wi+1}${isNow&&wi===w?' · minggu ini':''}</div>${wk.map((t,ii)=>itemHTML(`${T}|${m.ym}|w${wi}|${ii}`,t)).join('')}</div>`).join('')}
+        ${m.r.length?`<h4>Rutin sepanjang bulan</h4>${m.r.map((t,ii)=>itemHTML(`${T}|${m.ym}|r|${ii}`,t)).join('')}`:''}
+        <div class="boss"><div class="boss-h"><span class="boss-t">⚔️ Boss bulan ini</span><span class="boss-d">${fmtD(bd)}</span></div>
+          ${itemHTML(`${T}|${m.ym}|b`,m.boss)}
+          <div class="rw"><input placeholder="Hadiah kalau Boss kalah… (mis. es krim, buku baru)" value="${esc(S.rw[T+m.ym]||'')}" data-rw="${T+m.ym}"></div>
+          <div class="row" style="margin-top:8px"><button class="btn sm" data-logm="${T}|${m.ym}">Catat skor →</button>${met===true?'<span class="note ok">Target tercapai 🎉</span>':met===false?'<span class="note no">Belum tembus target</span>':''}</div></div>
+        ${m.gate?`<div class="gate"><div class="gate-t">🚪 ${esc(m.gate.t)}</div>${m.gate.i.map((t,ii)=>itemHTML(`${T}|${m.ym}|g|${ii}`,t)).join('')}
+          <p class="note" style="margin:6px 0 0">${esc(m.gate.note||'Aturan naik: lolos ≥ 3 dari 4 skill dan skill sisanya maksimal 0,5 band di bawah target. Belum lolos → 2 minggu buffer fokus skill itu → tes ulang.')}</p></div>`:''}
+        <div class="plat"><b>Platform</b>${esc(m.pl)}</div>
+      </div></article>`;
+  }).join('');
+}
+function renderFocusI(){
+  $('focusI').innerHTML=S.focus
+   ?`<div class="warn"><b>Mode Fokus CPNS aktif.</b> IELTS cukup 15 menit/hari (Anki + 1 audio). Kalau fokus berlangsung sampai SKB (±Feb–Mar 2027), materi Fase 1 tertunda ±3–4 bulan — target tes Des 2027 kemungkinan perlu dipadatkan atau digeser. Matikan mode ini setelah SKB.<div class="row" style="margin-top:8px"><button class="btn sm" data-focus="0">Matikan Mode Fokus</button></div></div>`
+   :`<div class="card"><p class="note" style="margin:0">Mode Fokus CPNS nonaktif — jadwal IELTS penuh berjalan.</p><div class="row" style="margin-top:8px"><button class="btn sm" data-focus="1">Aktifkan Mode Fokus CPNS</button></div></div>`;
+}
+function renderCpnsTop(){
+  $('cpWarn').innerHTML=`<b>Status 18 Nov 2026:</b> pemerintah & DPR sepakat membuka CPNS 2026 (Mensesneg, 6 Nov). Pembuatan akun SSCASN sudah dibuka sejak 14 Nov. Kepala BKN menyebut pengumuman tahapan & formasi sekitar 20 atau 23 Nov, pendaftaran pekan ke-4 November; MenPANRB memperkirakan ±150 ribu formasi. Jadwal, kuota & syarat resmi belum terbit. Formasi prioritas yang disebut KemenPANRB: Polisi Hutan, Manggala Agni, Guru Sekolah Terintegrasi, Guru Sekolah Unggul Garuda. Rencana ini memakai perkiraan SKD paling cepat ±11 Jan 2027, dan passing grade aturan 2024 (65/80/166) — cek ulang saat aturan 2026 terbit.`;
+  const sd=skdDate(),n=Math.ceil((sd-TODAY)/86400000);
+  $('skdCard').innerHTML=`<h3>📅 Tanggal SKD</h3>
+    <p class="note" style="margin:0 0 8px">${S.skd?'Tanggal dari kamu.':'Belum ada jadwal resmi — dipakai perkiraan paling cepat 11 Jan 2027.'} Isi tanggal resmi begitu BKN mengumumkan; hitung mundur di atas ikut berubah.</p>
+    <div class="rw"><input type="date" id="skdIn" value="${esc(S.skd)}"><button class="btn" id="skdClr">Pakai perkiraan</button></div>
+    ${n>=0?`<div class="big" style="margin:8px 0 4px">${n}<small>hari menuju SKD${S.skd?'':' (perkiraan)'}</small></div>`:'<p class="note">Tanggal SKD sudah lewat — lanjut ke SKB.</p>'}
+    <div class="cp-i">${C_PREP.map((b,bi)=>`<h4>${esc(b.t)}</h4>${b.i.map((t,ii)=>itemHTML(`K|${bi}|${ii}`,t)).join('')}`).join('')}</div>`;
+  renderFormasi();
+}
+function renderFormasi(){
+  const rows=S.fm.map(x=>`<tr><td><button class="btn sm" data-fmpick="${esc(x.id)}" title="Jadikan pilihan final">${S.fmPick===x.id?'★':'☆'}</button></td><td><b>${esc(x.inst)}</b><br><small class="note">${esc(x.jab)}</small></td><td>${esc(x.kuota)}</td><td>${esc(x.lok)}</td><td>${esc(x.tpp)}</td><td>${esc(x.note)}</td><td><button class="btn sm" data-fmdel="${esc(x.id)}">Hapus</button></td></tr>`).join('');
+  $('fmCard').innerHTML=`<h3>🎯 Shortlist formasi</h3>
+   <p class="note" style="margin:0 0 4px">Isi 3–5 formasi begitu pengumuman rilis. Syarat mutlak: jurusan di ijazah persis masuk kualifikasi. Utamakan kuota ≥ 3, penempatan yang bisa dijalani, dan SKB yang dekat dengan pekerjaan sekarang. Tandai ★ untuk 1 pilihan final.</p>
+   <div class="form"><label>Instansi<input id="fm-inst" type="text" placeholder="Pemprov DKI Jakarta"></label><label>Jabatan<input id="fm-jab" type="text" placeholder="Analis Keuangan Ahli Pertama"></label><label>Kuota<input id="fm-kuota" type="text" inputmode="numeric"></label><label>Lokasi<input id="fm-lok" type="text"></label><label>TPP / tukin<input id="fm-tpp" type="text"></label><label>Catatan<input id="fm-note" type="text" placeholder="syarat tambahan, rasio pelamar"></label></div>
+   <div class="row"><button class="btn pri" id="fmAdd">Tambah formasi</button>${S.fmPick?'<span class="note ok">Pilihan final sudah ditandai ★</span>':''}</div>
+   ${S.fm.length?`<div class="tbl"><table><thead><tr><th></th><th>Instansi · Jabatan</th><th>Kuota</th><th>Lokasi</th><th>TPP</th><th>Catatan</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`:''}`;
+}
+
+/* ===================== RENDER: TES ===================== */
+let tesT='C',tesYM=null;
+function renderTes(){
+  document.querySelectorAll('#tesSeg button').forEach(b=>b.classList.toggle('on',b.dataset.tes===tesT));
+  if(tesT==='C'){renderTesC();return;}
+  $('tesIntro').innerHTML='IELTS: Boss tiap <b>Sabtu terakhir</b> bulan itu. Target, grafik, dan status lolos dihitung otomatis.';
+  const months=I_MONTHS;if(!tesYM||!months.find(m=>m.ym===tesYM))tesYM=curYM();
+  const log=S.logI,e=log[tesYM]||{};
+  const opt=months.map(m=>`<option value="${m.ym}"${m.ym===tesYM?' selected':''}>${ymLabel(m.ym)}${log[m.ym]?' ✓':''}</option>`).join('');
+  const f=(id,lab,min,max,step)=>`<label>${lab}<input id="${id}" type="number" inputmode="decimal" min="${min}" max="${max}" step="${step||1}" value="${e[id.slice(3)]!=null?e[id.slice(3)]:''}"></label>`;
+  $('tesH').textContent='Catat hasil IELTS';
+  $('tesTblH').textContent='Jadwal & riwayat';
+  $('tesSave').textContent='Simpan (+50 XP)';
+  $('tesForm').innerHTML=`<label>Bulan<select id="tf-ym">${opt}</select></label>`+
+   f('tf-l','Listening /40',0,40)+f('tf-r','Reading /40',0,40)+f('tf-w','Writing band',0,9,.5)+f('tf-s','Speaking band',0,9,.5)+f('tf-e','EF SET',0,100)+
+   `<label class="wide">Catatan (skill terlemah, 3 penyebab error teratas)<input id="tf-n" type="text" value="${esc(e.n||'')}"></label>`;
+  $('tesMsg').textContent='';
+  const rows=months.map(m=>{const bd=bossDate('I',m),x=log[m.ym],met=metTarget('I',m);
+    let res='–';
+    if(x){const r=iRes(x);res=`L ${x.l!=null?x.l+' ('+fb(r.lb)+')':'–'} · R ${x.r!=null?x.r+' ('+fb(r.rb)+')':'–'} · W ${fb(x.w)} · S ${fb(x.s)} → <b>${fb(r.ov)}</b>`;}
+    const tg=m.tg==null?'baseline':fb(m.tg);
+    const st=met===null?(bd<TODAY?'<span class="note">belum dicatat</span>':'<span class="note">'+Math.ceil((bd-TODAY)/86400000)+' hr lagi</span>'):(met?'<span class="ok">✓</span>':'<span class="no">✗</span>');
+    return `<tr><td><b>${ymLabel(m.ym)}</b><br><small class="note">${fmtD(bd)}</small></td><td>${esc(m.boss)}</td><td>${tg}</td><td>${res}${x&&x.n?'<br><small class="note">'+esc(x.n)+'</small>':''}</td><td>${st}</td><td>${x?`<button class="btn sm" data-del="${m.ym}">Hapus</button>`:''}</td></tr>`;}).join('');
+  $('tesTbl').innerHTML=`<table><thead><tr><th>Bulan</th><th>Boss</th><th>Target</th><th>Hasil</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+  renderChart();
+  $('tesGuide').innerHTML=`<h3>Cara jadi Boss yang adil</h3><ol class="list">
+   <li>Kerjakan di <b>Sabtu terakhir</b> bulan itu, jam yang sama dengan jam tesmu nanti (biasanya pagi).</li>
+   <li>Listening → Reading → Writing berturut-turut, HP mode pesawat, audio diputar sekali, tanpa kamus.</li>
+   <li>Listening & Reading diisi skor mentah /40 — band dihitung otomatis (tabel konversi umum Academic, sifatnya perkiraan).</li>
+   <li>Writing & Speaking: nilai pakai band descriptors publik atau Write & Improve; mulai Jun pakai tutor. Nilai sendiri cenderung kebagusan.</li>
+   <li>Analisis ≤ 48 jam: setiap salah masuk error log + penyebabnya → pilih 3 penyebab terbesar → 1 aksi per penyebab untuk 2 minggu.</li></ol>`;
+}
+function renderTesC(){
+  $('tesIntro').innerHTML='CPNS: catat <b>setiap try-out</b> per tanggal (mingguan, Sabtu pagi). Boss bulanan memakai try-out terakhir di bulan itu.';
+  $('tesH').textContent='Catat try-out SKD';
+  $('tesTblH').textContent='Riwayat try-out';
+  $('tesSave').textContent='Simpan (+40 XP)';
+  const srcs=['Aplikasi try-out','Simulasi CAT BKN','Buku / bank soal','SKD resmi','Lainnya'];
+  const f=(id,lab,max)=>`<label>${lab}<input id="${id}" type="number" inputmode="numeric" min="0" max="${max}" step="1"></label>`;
+  $('tesForm').innerHTML=`<label>Tanggal<input id="tf-d" type="date" value="${dkey(TODAY)}"></label><label>Sumber<select id="tf-src">${srcs.map(s=>`<option>${s}</option>`).join('')}</select></label><label>Passing grade<span class="note" style="text-transform:none;letter-spacing:0;padding-top:9px">65 · 80 · 166</span></label>`+
+    f('tf-twk','TWK /150',150)+f('tf-tiu','TIU /175',175)+f('tf-tkp','TKP /225',225)+
+    `<label class="wide">Catatan (waktu habis per subtes, 3 penyebab error teratas)<input id="tf-n" type="text"></label>`;
+  $('tesMsg').textContent='';
+  const list=allTO().sort((a,b)=>b.d.localeCompare(a.d));
+  const pgc=(v,p)=>v==null?'–':`<span class="${v>=p?'ok':'no'}">${v}</span>`;
+  const rows=list.map((x,i)=>{const r=cRes(x);return `<tr><td><b>#${list.length-i}</b><br><small class="note">${fmtD(pd(x.d))}</small></td><td>${esc(x.src||'')}</td><td>${pgc(x.twk,PG.twk)} / ${pgc(x.tiu,PG.tiu)} / ${pgc(x.tkp,PG.tkp)}</td><td><b>${r.tot??'–'}</b> ${r.tot!=null?(r.pg?'<span class="ok">PG ✓</span>':'<span class="no">PG ✗</span>'):''}${x.n?'<br><small class="note">'+esc(x.n)+'</small>':''}</td><td><button class="btn sm" data-delto="${esc(x.id)}">Hapus</button></td></tr>`;}).join('');
+  $('tesTbl').innerHTML=list.length?`<table><thead><tr><th>Try-out</th><th>Sumber</th><th>TWK / TIU / TKP</th><th>Total</th><th></th></tr></thead><tbody>${rows}</tbody></table>`:'<p class="note">Belum ada try-out. Mulai dengan Try-out #1 (baseline) Sabtu ini.</p>';
+  renderChart();
+  $('tesGuide').innerHTML=`<h3>Target & aturan try-out</h3>
+   <div class="tbl"><table><thead><tr><th>Titik ukur</th><th>Target</th><th>Kalau belum tercapai</th></tr></thead><tbody>
+    <tr><td>TO #1 · 14 Nov</td><td>Baseline</td><td>Catat subtes terlemah</td></tr>
+    <tr><td>TO #3 · 28 Nov</td><td>≥ 311 & lolos PG ketiga subtes</td><td>70% waktu minggu berikutnya ke subtes yang gagal</td></tr>
+    <tr><td>TO #5 · 12 Des</td><td>≥ 350 · TKP ≥ 175</td><td>Fokus kecepatan, bukan materi baru</td></tr>
+    <tr><td>TO #7 · 26–27 Des</td><td>≥ 380 dua kali berturut-turut</td><td>Tambah 1 try-out tengah minggu</td></tr>
+    <tr><td>Sebelum SKD</td><td>400+ · TKP 185 · TIU 110 · TWK 100</td><td>—</td></tr></tbody></table></div>
+   <ol class="list" style="margin-top:10px">
+   <li>Selalu 110 soal / 100 menit penuh (TWK 30 · TIU 35 · TKP 45), tanpa pause, HP mode pesawat.</li>
+   <li>Passing grade aturan 2024: <b>TWK 65 · TIU 80 · TKP 166</b> (maks 150/175/225). Cek ulang saat aturan 2026 terbit.</li>
+   <li>Pakai Simulasi CAT BKN minimal 2× supaya terbiasa tampilannya.</li>
+   <li>Ganti-ganti paket soal — jangan ulang paket yang sama.</li>
+   <li>Analisis ≤ 48 jam: kelompokkan soal salah per materi, masukkan ke drill Minggu.</li>
+   <li>Angka 400+ adalah target aman untuk formasi kompetitif, bukan aturan resmi — yang menentukan peringkat di formasi yang sama.</li></ol>`;
+}
+function renderChart(){
+  const box=$('tesChart');
+  let pts,yMin,yMax,series,step;
+  if(tesT==='I'){pts=I_MONTHS.filter(m=>S.logI[m.ym]).map(m=>{const r=iRes(S.logI[m.ym]);return {lab:MO[+m.ym.slice(5)-1],lb:r.lb,rb:r.rb,ov:r.ov,tg:m.tg};});yMin=3;yMax=9;step=1;
+    series=[['lb','var(--ie-mute)',1],['rb','var(--cp-mute)',1],['ov','var(--accent)',0],['tg','var(--gold)',2]];}
+  else{pts=allTO().sort((a,b)=>a.d.localeCompare(b.d)).map(x=>{const r=cRes(x);const m=C_MONTHS.find(mm=>mm.ym===x.d.slice(0,7));return {lab:(+x.d.slice(8))+'/'+(+x.d.slice(5,7)),tot:r.tot,tg:m?m.tg:null};}).filter(p=>p.tot!=null);yMin=150;yMax=550;step=50;
+    series=[['tot','var(--accent)',0],['tg','var(--gold)',2]];}
+  if(pts.length<2){box.innerHTML=pts.length?`<p class="note" style="margin-top:10px">Grafik muncul setelah 2 ${tesT==='I'?'bulan':'try-out'} tercatat.</p>`:'';return;}
+  const W=600,H=210,pl=36,pr=12,pt=12,pb=28;
+  const X=i=>pl+(W-pl-pr)*(i/(pts.length-1)),Y=v=>pt+(H-pt-pb)*(1-(Math.max(yMin,Math.min(yMax,v))-yMin)/(yMax-yMin));
+  let g='';for(let v=yMin;v<=yMax;v+=step)g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line-soft)"/><text x="${pl-7}" y="${Y(v)+4}" font-size="10" text-anchor="end" fill="var(--ink-soft)">${v}</text>`;
+  if(tesT==='C')g+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(311)}" y2="${Y(311)}" stroke="var(--bad)" stroke-dasharray="2 4"/><text x="${W-pr}" y="${Y(311)-4}" font-size="9.5" text-anchor="end" fill="var(--bad)">PG total 311</text>`;
+  const line=(k,c,dash)=>{const p=pts.map((x,i)=>x[k]!=null?[X(i),Y(x[k])]:null).filter(Boolean);if(!p.length)return'';
+    return `<polyline fill="none" stroke="${c}" stroke-width="${dash===0?2.6:1.8}" ${dash?'stroke-dasharray="'+(dash===2?'2 4':'5 4')+'"':''} points="${p.map(q=>q.join(',')).join(' ')}"/>`+(dash===2?'':p.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="3.2" fill="${c}"/>`).join(''));};
+  const every=Math.ceil(pts.length/12);
+  const lab=pts.map((x,i)=>i%every===0||i===pts.length-1?`<text x="${X(i)}" y="${H-8}" font-size="9.5" text-anchor="middle" fill="var(--ink-soft)">${x.lab}</text>`:'').join('');
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Grafik skor">${g}${series.map(s=>line(...s)).join('')}${lab}</svg>
+   <div class="note">${tesT==='I'?'Tebal = overall · putus-putus hijau = Listening · biru = Reading · titik-titik emas = target bulan itu':'Tebal = total SKD per try-out · titik-titik emas = target bulan itu · merah = PG total 311'}</div>`;
+}
+
+/* ===================== RENDER: LAINNYA ===================== */
+let moreTab='plat';
+function earnedBadges(){
+  const e=[];const lI=Object.values(S.logI).map(iRes).filter(Boolean),lC=allTO().map(cRes).filter(Boolean);
+  const maxOv=Math.max(0,...lI.map(r=>r.ov||0)),best=bestStreak();
+  if(Object.keys(S.chk).length)e.push('first');
+  if(best>=7)e.push('s7'); if(best>=30)e.push('s30'); if(best>=100)e.push('s100');
+  if(lI.length||lC.length)e.push('boss');
+  if(maxOv>=5)e.push('b5'); if(maxOv>=6)e.push('b6'); if(maxOv>=7)e.push('b7');
+  if(lC.some(r=>r.pg))e.push('pg'); if(lC.some(r=>r.tot>=380))e.push('c380'); if(lC.some(r=>r.tot>=400))e.push('c400');
+  if(lC.length>=10)e.push('to10');
+  if(I_MONTHS.some(m=>monthStat('I',m).p===1)||C_MONTHS.some(m=>monthStat('C',m).p===1))e.push('month');
+  if(totalXP()>=1000)e.push('xp1k');
+  if(Object.values(S.ch).filter(Boolean).length>=10)e.push('ch10');
+  return e;
+}
+function renderMore(){
+  document.querySelectorAll('#moreSeg button').forEach(b=>b.classList.toggle('on',b.dataset.more===moreTab));
+  ['plat','fun','badge','set'].forEach(k=>$('more-'+k).hidden=k!==moreTab);
+  const pg=(T,lab,c)=>PLAT[T].map(g=>`<div class="card"><h3><span class="tag ${c}">${lab}</span>${esc(g.g)}</h3>${g.x.map(x=>`<div class="item" style="cursor:default"><div class="it"><b>${esc(x[0])}</b> <span class="tag ${x[1]}">${x[1]==='free'?'gratis':'berbayar'}</span><br><span class="note">${esc(x[2])}</span></div></div>`).join('')}</div>`).join('');
+  $('more-plat').innerHTML=`<h2>Platform CPNS</h2>${pg('C','CPNS','cp')}
+    <div class="warn">Pendaftaran CPNS resmi selalu gratis dan hanya lewat sscasn.bkn.go.id. Abaikan tawaran “jalur khusus” atau info jadwal tanpa sumber resmi. Aplikasi try-out tidak pernah punya “bocoran soal”.</div>
+    <h2>Platform IELTS</h2>${pg('I','IELTS','ie')}
+    <div class="card"><h3>Kalau budget terbatas</h3><ul class="list"><li><b>CPNS sekarang:</b> 1 aplikasi try-out + 1 buku kisi-kisi SKD. Sisanya gratis (CAT BKN, aclc KPK, KBBI).</li><li><b>IELTS nanti:</b> 1 buku grammar sesuai level + Cambridge IELTS 2–3 seri terbaru; tutor Writing & Speaking di Jun–Nov 2027.</li></ul></div>`;
+  const pola=S.focus?`<div class="card"><h3>📅 Pola mingguan · Mode Fokus CPNS</h3>
+    <div class="tbl"><table><thead><tr><th>Hari</th><th>CPNS</th><th>IELTS</th></tr></thead><tbody>
+     <tr><td>Hari WFO</td><td>Perjalanan pagi 30': Anki CPNS 10' + 15 soal TKP · Malam 60': materi baru 25' + 20 soal berwaktu 25' + error log 10'</td><td>Perjalanan pulang 15': 1 audio</td></tr>
+     <tr><td>Hari WFA</td><td>Pagi 30' + malam 60–75' (tambah 10 soal figural/analitis)</td><td>Anki 15'</td></tr>
+     <tr><td>Sabtu <small>(di rumah tante)</small></td><td>Try-out penuh 100' tanpa jeda + analisis 45'</td><td>—</td></tr>
+     <tr><td>Minggu</td><td>Drill subtes terlemah 60–90'</td><td>Opsional: speaking 1 menit</td></tr>
+    </tbody></table></div>
+    <p class="note" style="margin-top:8px">Total ±10–11 jam/minggu CPNS + ±1,5 jam IELTS. Minggu UTS/UAS S2 atau kerja padat → <b>versi minimum</b>: Anki 10' + 20 soal campur per hari + try-out Sabtu tetap jalan.</p></div>`
+   :`<div class="card"><h3>📅 Pola mingguan (dua jalur sekaligus)</h3>
+    <div class="tbl"><table><thead><tr><th>Hari</th><th>IELTS</th><th>CPNS</th></tr></thead><tbody>
+     <tr><td>Sen–Kam</td><td>45–75' (grammar/vocab baru + 1 skill)</td><td>15–30 soal harian (±20')</td></tr>
+     <tr><td>Jumat</td><td>Writing 30–40'</td><td>Review error log 10'</td></tr>
+     <tr><td>Sabtu <small>(atau Minggu)</small></td><td>Sesi panjang 2–3 jam: tes mini/mock, analisis, rekaman Speaking</td><td>Try-out / paket soal 1 jam</td></tr>
+     <tr><td>Hari satunya</td><td colspan="2">English Fun Day + istirahat. Hari bisa ditukar — yang penting total jam per minggu tercapai.</td></tr>
+    </tbody></table></div></div>`;
+  $('more-fun').innerHTML=`<h2>Biar belajarnya fun</h2>
+   <div class="card"><h3>🎮 Cara main tracker ini</h3><ul class="list">
+    <li><b>XP:</b> quest +10 · kebiasaan harian +5 · tantangan harian +15 · try-out CPNS +40 · tes IELTS bulanan +50. Level naik otomatis.</li>
+    <li><b>Streak 🔥:</b> nyala kalau minimal 1 kebiasaan dicentang hari itu. Kotak di heatmap = bukti visual konsistensi.</li>
+    <li><b>Boss bulanan ⚔️:</b> CPNS memakai try-out terakhir di bulan itu; IELTS memakai tes Sabtu terakhir. Pasang hadiahnya sendiri — klaim hanya kalau target tercapai.</li>
+    <li><b>Lencana 🏅:</b> ${BADGES.length} lencana untuk dikoleksi.</li></ul></div>
+   <div class="card"><h3>🧠 Trik supaya tahan</h3><ul class="list">
+    <li><b>Tempel ke kebiasaan lama:</b> Anki di perjalanan, 15 soal TKP sebelum buka medsos, audio IELTS saat pulang.</li>
+    <li><b>Konsistensi > durasi:</b> 60–90 menit tiap hari kerja lebih kuat daripada maraton akhir pekan.</li>
+    <li><b>Try-out = jadwal tetap:</b> Sabtu pagi, jam yang sama, tidak bisa ditawar.</li>
+    <li><b>Study buddy:</b> cari 1 teman yang juga daftar CPNS, saling kirim skor try-out tiap Sabtu.</li>
+    <li><b>Pomodoro 25/5</b> untuk sesi malam. Try-out jangan di jam paling capek.</li>
+    <li><b>Minggu ringan</b> setelah SKD: cuma Anki + input santai, baru masuk SKB.</li></ul></div>
+   ${pola}
+   <div class="card"><h3>🚩 Tanda perlu rem</h3><ul class="list"><li>Skor try-out turun 2× berturut-turut padahal jam belajar naik → kurangi jam, perbaiki tidur.</li><li>Kebiasaan bolong &gt; 3 hari → kembali ke versi minimum dulu, jangan langsung kejar ketinggalan.</li><li>Merasa “belajar tapi tidak naik” → cek error log: penyebab yang sama muncul lagi?</li></ul></div>`;
+  const eb=earnedBadges();
+  $('more-badge').innerHTML=`<h2>Lencana · ${eb.length}/${BADGES.length}</h2><div class="badges">${BADGES.map(b=>`<div class="bd${eb.includes(b.id)?' on':''}"><div class="e">${b.e}</div><b>${esc(b.t)}</b><span>${esc(b.d)}</span></div>`).join('')}</div>
+    <p class="note" style="margin-top:12px">Streak terbaik: <b>${bestStreak()} hari</b> · Total hari belajar: <b>${habDays().length}</b> · Try-out tercatat: <b>${allTO().length}</b> · Tantangan selesai: <b>${Object.values(S.ch).filter(Boolean).length}</b></p>`;
+  $('more-set').innerHTML=`<h2>Data & backup</h2>
+   ${storageOK?'':'<div class="warn">Browser ini tidak mengizinkan penyimpanan lokal — data akan hilang saat halaman ditutup. Buka file ini lewat Chrome/Safari biasa (bukan preview di aplikasi lain).</div>'}
+   <div class="card"><h3>Mode Fokus CPNS</h3><p class="note">${S.focus?'Aktif — Hari Ini dan header memprioritaskan CPNS, IELTS versi maintenance.':'Nonaktif — dua jalur berjalan penuh.'}</p><div class="row"><button class="btn" data-focus="${S.focus?'0':'1'}">${S.focus?'Matikan':'Aktifkan'} Mode Fokus</button></div></div>
+   <div class="card"><h3>Backup</h3><p class="note">Data cuma ada di browser HP ini. Kalau cache dihapus atau ganti HP, data hilang — backup tiap Minggu setelah try-out.</p>
+    <div class="row"><button class="btn pri" id="bkDl">Unduh file backup</button><button class="btn" id="bkCp">Salin ke clipboard</button></div></div>
+   <div class="card"><h3>Pulihkan</h3><p class="note">Pilih file backup (.json) atau tempel teks backup, lalu tekan Pulihkan. Data sekarang akan diganti. Backup dari v8 juga bisa dipakai.</p>
+    <input type="file" id="bkFile" accept=".json,application/json" style="margin-bottom:8px">
+    <textarea id="bkTxt" rows="3" placeholder="…atau tempel teks backup di sini"></textarea>
+    <div class="row" style="margin-top:8px"><button class="btn" id="bkRs">Pulihkan</button></div></div>
+   <div class="card"><h3>Reset</h3><div class="row"><button class="btn" data-reset="I">Reset centang IELTS</button><button class="btn" data-reset="C">Reset centang CPNS</button><button class="btn" data-reset="ALL">Hapus semua data</button></div></div>`;
+}
+
+/* ===================== RENDER ALL ===================== */
+function renderAll(){renderHeader();renderHome();renderFocusI();renderTrack('I');renderCpnsTop();renderTrack('C');renderTes();renderMore();}
+let pane='H';
+function go(p){pane=p;document.querySelectorAll('.pane').forEach(e=>e.classList.toggle('on',e.id==='p-'+p));
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.nav===p));
+  document.body.dataset.t=(p==='I'||p==='C')?p:(p==='T'?tesT:(S.focus?'C':'H'));window.scrollTo({top:0});}
+
+/* ===================== EVENTS ===================== */
+document.addEventListener('click',ev=>{
+  const t=ev.target.closest('[data-chk],[data-hab],[data-nav],[data-go],[data-tog],[data-all],[data-tes],[data-more],[data-logm],[data-del],[data-delto],[data-reset],[data-focus],[data-fmdel],[data-fmpick],#chalDone,#chalNew,#tesSave,#skdClr,#fmAdd,#bkDl,#bkCp,#bkRs');
+  if(!t)return;
+  if(t.dataset.chk){const id=t.dataset.chk;if(S.chk[id])delete S.chk[id];else{S.chk[id]=new Date().toISOString();toast('+10 XP');}
+    save();renderAll();return;}
+  if(t.dataset.hab){const k=dkey(TODAY);const a=S.hab[k]||(S.hab[k]=[]);const i=a.indexOf(t.dataset.hab);
+    if(i>=0)a.splice(i,1);else{a.push(t.dataset.hab);toast(habits().every(h=>a.includes(h.id))?'🌟 Semua kebiasaan hari ini beres!':'+5 XP');}
+    save();renderAll();return;}
+  if(t.dataset.focus!==undefined){S.focus=t.dataset.focus==='1';tesT=S.focus?'C':'I';tesYM=null;save();renderAll();go(pane);toast(S.focus?'Mode Fokus CPNS aktif':'Mode Fokus CPNS dimatikan');return;}
+  if(t.dataset.nav){go(t.dataset.nav);return;}
+  if(t.dataset.go){const T=t.dataset.go;OPEN.add(T+curYM());renderTrack(T);go(T);setTimeout(()=>{const e=document.querySelector(`[data-key="${T+curYM()}"]`);if(e)e.scrollIntoView({block:'start',behavior:'smooth'});},50);return;}
+  if(t.dataset.tog){const k=t.dataset.tog;OPEN.has(k)?OPEN.delete(k):OPEN.add(k);document.querySelector(`[data-key="${k}"]`).classList.toggle('open');return;}
+  if(t.dataset.all){const T=t.dataset.all[0],o=t.dataset.all[1]==='1';MONTHS(T).forEach(m=>o?OPEN.add(T+m.ym):OPEN.delete(T+m.ym));renderTrack(T);return;}
+  if(t.dataset.tes){tesT=t.dataset.tes;tesYM=null;document.body.dataset.t=tesT;renderTes();return;}
+  if(t.dataset.more){moreTab=t.dataset.more;renderMore();return;}
+  if(t.dataset.logm){const [T,ym]=t.dataset.logm.split('|');tesT=T;tesYM=T==='I'?ym:null;renderTes();go('T');return;}
+  if(t.dataset.del){if(!confirm('Hapus hasil '+ymLabel(t.dataset.del)+'?'))return;delete S.logI[t.dataset.del];save();renderAll();return;}
+  if(t.dataset.delto){const id=t.dataset.delto;if(!confirm('Hapus try-out ini?'))return;
+    if(id.startsWith('L'))delete S.logC[id.slice(1)];else S.to=S.to.filter(x=>x.id!==id);save();renderAll();return;}
+  if(t.dataset.fmdel){S.fm=S.fm.filter(x=>x.id!==t.dataset.fmdel);if(S.fmPick===t.dataset.fmdel)S.fmPick='';save();renderCpnsTop();return;}
+  if(t.dataset.fmpick){S.fmPick=S.fmPick===t.dataset.fmpick?'':t.dataset.fmpick;save();renderCpnsTop();if(S.fmPick)toast('★ Pilihan final ditandai');return;}
+  if(t.dataset.reset){const r=t.dataset.reset;if(!confirm(r==='ALL'?'Hapus SEMUA data (centang, kebiasaan, skor, try-out, formasi)? Tidak bisa dibatalkan.':'Reset semua centang '+(r==='I'?'IELTS':'CPNS')+'?'))return;
+    if(r==='ALL'){const th=S.theme,cu=S.cust;S=defaults();S.theme=th;S.cust=cu;}
+    else{const pre=r==='I'?['I|','IM|']:['C|','X|','K|'];Object.keys(S.chk).forEach(k=>{if(pre.some(p=>k.startsWith(p)))delete S.chk[k];});}
+    save();renderAll();toast('Sudah direset');return;}
+  if(t.id==='chalDone'){S.ch[dkey(TODAY)]=true;save();renderAll();toast('🎲 +15 XP');return;}
+  if(t.id==='chalNew'){const k=dkey(TODAY);S.chOff[k]=(S.chOff[k]||0)+1;save();renderHome();return;}
+  if(t.id==='tesSave'){saveTes();return;}
+  if(t.id==='skdClr'){S.skd='';save();renderAll();toast('Pakai perkiraan 11 Jan 2027');return;}
+  if(t.id==='fmAdd'){const g=id=>$(id).value.trim();const x={id:'f'+Date.now().toString(36),inst:g('fm-inst'),jab:g('fm-jab'),kuota:g('fm-kuota'),lok:g('fm-lok'),tpp:g('fm-tpp'),note:g('fm-note')};
+    if(!x.inst&&!x.jab){toast('Isi minimal instansi atau jabatan');return;}S.fm.push(x);save();renderCpnsTop();toast('Formasi ditambahkan');return;}
+  if(t.id==='bkDl'){const b=new Blob([JSON.stringify(S)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='backup-quest-belajar-'+dkey(TODAY)+'.json';document.body.appendChild(a);a.click();a.remove();toast('Backup diunduh');return;}
+  if(t.id==='bkCp'){const s=JSON.stringify(S);(navigator.clipboard?navigator.clipboard.writeText(s):Promise.reject()).then(()=>toast('Tersalin'),()=>{$('bkTxt').value=s;$('bkTxt').select();toast('Salin manual dari kotak di bawah');});return;}
+  if(t.id==='bkRs'){restore();return;}
+});
+document.addEventListener('change',ev=>{
+  const t=ev.target;
+  if(t.dataset&&t.dataset.rw!==undefined){S.rw[t.dataset.rw]=t.value.trim();save();renderHome();toast('Hadiah disimpan 🎁');return;}
+  if(t.id==='tf-ym'){tesYM=t.value;renderTes();return;}
+  if(t.id==='skdIn'){S.skd=t.value;save();renderAll();toast(t.value?'Tanggal SKD disimpan':'Pakai perkiraan');return;}
+  if(t.id==='bkFile'&&t.files[0]){const r=new FileReader();r.onload=()=>{$('bkTxt').value=r.result;};r.readAsText(t.files[0]);}
+});
+function num(id){const e=$(id);if(!e||e.value==='')return null;const v=+e.value;return isNaN(v)?null:v;}
+function saveTes(){
+  if(tesT==='C'){
+    const d=$('tf-d').value;if(!d){$('tesMsg').textContent='Isi tanggal try-out';return;}
+    const e={id:'t'+Date.now().toString(36),d,src:$('tf-src').value,twk:num('tf-twk'),tiu:num('tf-tiu'),tkp:num('tf-tkp'),n:$('tf-n').value.trim()};
+    if(e.twk==null&&e.tiu==null&&e.tkp==null){$('tesMsg').textContent='Isi minimal satu skor';return;}
+    if([e.twk,e.tiu,e.tkp].some(v=>v!=null&&v<0)||e.twk>150||e.tiu>175||e.tkp>225){$('tesMsg').textContent='Cek lagi: maks TWK 150, TIU 175, TKP 225';return;}
+    S.to.push(e);
+    const ym=d.slice(0,7);if(C_MONTHS.some(m=>m.ym===ym)&&pd(d)>=lastSat(ym))S.chk[`C|${ym}|b`]=S.chk[`C|${ym}|b`]||new Date().toISOString();
+    save();renderAll();const r=cRes(e);
+    toast(r.tot==null?'Tersimpan · +40 XP':(r.pg?'🎯 Lolos PG! Total '+r.tot+' · +40 XP':'Total '+r.tot+' · +40 XP'));return;
+  }
+  const ym=$('tf-ym').value;
+  const e={l:num('tf-l'),r:num('tf-r'),w:num('tf-w'),s:num('tf-s'),e:num('tf-e')};
+  if(e.l!=null&&(e.l<0||e.l>40)||e.r!=null&&(e.r<0||e.r>40)){$('tesMsg').textContent='Listening/Reading harus 0–40';return;}
+  e.n=$('tf-n').value.trim();
+  if(Object.entries(e).every(([k,v])=>v==null||v==='')){$('tesMsg').textContent='Isi minimal satu skor';return;}
+  const isNew=!S.logI[ym];
+  S.logI[ym]=e;
+  S.chk[`I|${ym}|b`]=S.chk[`I|${ym}|b`]||new Date().toISOString();
+  save();renderAll();
+  const m=I_MONTHS.find(x=>x.ym===ym),met=metTarget('I',m);
+  toast(met===true?'⚔️ Boss kalah!'+(isNew?' +50 XP':''):(isNew?'Tersimpan · +50 XP':'Diperbarui'));
+}
+function restore(){
+  const s=$('bkTxt').value.trim();if(!s){toast('Belum ada data backup');return;}
+  try{const o=JSON.parse(s);if(typeof o!=='object'||!o.chk)throw 0;if(!confirm('Ganti data sekarang dengan backup ini?'))return;
+    S=defaults();for(const k in S)if(o[k]!==undefined)S[k]=o[k];if(!Array.isArray(S.to))S.to=[];if(!Array.isArray(S.fm))S.fm=[];save();renderAll();toast('Data dipulihkan');}
+  catch(e){toast('Format backup tidak dikenali');}
+}
+
+
+/* ===================== TEMA WARNA LATAR ===================== */
+const THEMES=[
+ {id:'auto',n:'Ikuti tab',c:null},
+ {id:'lav',n:'Lavender',c:['#F4F1FF','#EAE4FD']},
+ {id:'senja',n:'Senja',c:['#E2EAF8','#EBE2F5','#F5E3EC']},
+ {id:'mint',n:'Mint',c:['#ECF8F2','#DDF1E7']},
+ {id:'langit',n:'Langit',c:['#EDF5FE','#DCEAF8']},
+ {id:'sage',n:'Sage',c:['#F0F3EA','#E2E9DA']},
+ {id:'peach',n:'Peach',c:['#FFF3EA','#FCE5D8']},
+ {id:'sakura',n:'Sakura',c:['#FDF0F4','#F7E2EA']},
+ {id:'krem',n:'Krem',c:['#FCF8EF','#F3ECDD']},
+ {id:'butter',n:'Butter',c:['#FFFAEA','#F9F0D2']},
+ {id:'laut',n:'Laut',c:['#E9F6F6','#E1EDF8']},
+ {id:'kabut',n:'Kabut',c:['#F4F5F7','#E6E8EE']},
+ {id:'custom',n:'Buatanmu',c:null}];
+function grad(c){return c.length===1||c.every(x=>x.toLowerCase()===c[0].toLowerCase())?c[0]:'linear-gradient(165deg,'+c.join(',')+')';}
+function soften(hex,amt){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;
+  r=Math.round(r+(255-r)*amt);g=Math.round(g+(255-g)*amt);b=Math.round(b+(255-b)*amt);
+  return '#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();}
+function lum(hex){const n=parseInt(hex.slice(1),16);return (0.299*(n>>16)+0.587*(n>>8&255)+0.114*(n&255))/255;}
+function softPair(a,b,on){if(!on)return [a,b];return [a,b].map(h=>{const l=lum(h);return l>0.9?h:soften(h,Math.min(.85,Math.max(.4,(0.93-l)/(1-l))));});}
+function themeColors(){if(S.theme==='custom'&&S.cust)return S.cust;const t=THEMES.find(x=>x.id===S.theme);return t&&t.c?t.c:null;}
+function applyTheme(){
+  const c=themeColors();
+  if(c){document.body.style.setProperty('--ubg',grad(c));}else document.body.style.removeProperty('--ubg');
+  const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=c?c[0]:'#6D4FD8';
+}
+function renderThemes(){
+  $('swGrid').innerHTML=THEMES.map(t=>{
+    let bg;if(t.id==='auto')bg='linear-gradient(90deg,#EDE8FE 0 33%,#E5F4EC 33% 66%,#E6EEFD 66%)';
+    else if(t.id==='custom')bg=S.cust?grad(S.cust):'repeating-linear-gradient(45deg,#F4F4F6 0 6px,#fff 6px 12px)';
+    else bg=grad(t.c);
+    return `<button class="sw${S.theme===t.id?' on':''}" data-theme-id="${t.id}"><i style="background:${bg}"></i>${esc(t.n)}</button>`;}).join('');
+  if(S.cust){$('cuA').value=S.cust[0];$('cuB').value=S.cust[S.cust.length-1];}
+  cuPreview();
+}
+function cuPreview(){const p=softPair($('cuA').value,$('cuB').value,$('cuSoft').checked);$('cuPrev').style.background=grad(p);}
+function openTheme(o){$('thBg').hidden=!o;if(o)renderThemes();}
+document.addEventListener('click',ev=>{
+  const t=ev.target;
+  if(t.closest('#thOpen')){openTheme(true);return;}
+  if(t.id==='thClose'||t.id==='thBg'){openTheme(false);return;}
+  const sw=t.closest('[data-theme-id]');
+  if(sw){const id=sw.dataset.themeId;
+    if(id==='custom'&&!S.cust){S.cust=softPair($('cuA').value,$('cuB').value,$('cuSoft').checked);}
+    S.theme=id;save();applyTheme();renderThemes();toast('Warna latar: '+THEMES.find(x=>x.id===id).n);return;}
+  if(t.id==='cuApply'){S.cust=softPair($('cuA').value,$('cuB').value,$('cuSoft').checked);S.theme='custom';save();applyTheme();renderThemes();toast('Warna buatanmu dipakai 🎨');return;}
+});
+['input','change'].forEach(evn=>document.addEventListener(evn,ev=>{if(['cuA','cuB','cuSoft'].includes(ev.target.id))cuPreview();}));
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&!$('thBg').hidden)openTheme(false);});
+const _renderAll=renderAll;renderAll=function(){_renderAll();applyTheme();};
+
+/* ===================== INIT ===================== */
+load();
+tesT=S.focus?'C':'I';
+OPEN.add('I'+curYM());OPEN.add('C'+curYM());
+renderAll();
+go('H');
+</script>
+</body>
+</html>
